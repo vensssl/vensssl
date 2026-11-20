@@ -1,0 +1,268 @@
+[
+ {
+  "id": "01",
+  "voice": "am_michael",
+  "text": "Knock. Knock. Knock.",
+  "start": 0.5,
+  "end": 1.843
+ },
+ {
+  "id": "02",
+  "voice": "am_michael",
+  "text": "Three slow knocks. Then nothing.",
+  "start": 2.563,
+  "end": 4.656
+ },
+ {
+  "id": "03",
+  "voice": "am_michael",
+  "text": "Four days without power.",
+  "start": 5.256,
+  "end": 6.883
+ },
+ {
+  "id": "04",
+  "voice": "am_michael",
+  "text": "Last night, a voice on the radio read my address.",
+  "start": 7.183,
+  "end": 10.389
+ },
+ {
+  "id": "05",
+  "voice": "am_michael",
+  "text": "And now someone was at my door.",
+  "start": 10.689,
+  "end": 12.643
+ },
+ {
+  "id": "06",
+  "voice": "am_michael",
+  "text": "Mrs. Alvarez grabbed my arm.",
+  "start": 13.243,
+  "end": 15.414
+ },
+ {
+  "id": "07",
+  "voice": "am_michael",
+  "text": "Neither of us breathed.",
+  "start": 15.714,
+  "end": 17.111
+ },
+ {
+  "id": "08",
+  "voice": "am_michael",
+  "text": "Then a piece of paper slid under the door.",
+  "start": 17.831,
+  "end": 20.116
+ },
+ {
+  "id": "09",
+  "voice": "am_michael",
+  "text": "One line, in pencil.",
+  "start": 20.416,
+  "end": 21.801
+ },
+ {
+  "id": "10",
+  "voice": "am_michael",
+  "text": "Leave before sunrise. Don't stay on the list.",
+  "start": 22.161,
+  "end": 25.169
+ },
+ {
+  "id": "11",
+  "voice": "am_michael",
+  "text": "Day five.",
+  "start": 26.009,
+  "end": 26.971
+ },
+ {
+  "id": "12",
+  "voice": "am_michael",
+  "text": "At sunrise, I opened the door.",
+  "start": 27.571,
+  "end": 29.439
+ },
+ {
+  "id": "13",
+  "voice": "am_michael",
+  "text": "The hallway was empty.",
+  "start": 29.739,
+  "end": 31.133
+ },
+ {
+  "id": "14",
+  "voice": "am_michael",
+  "text": "But every door on our floor had a red X painted on it.",
+  "start": 31.433,
+  "end": 34.748
+ },
+ {
+  "id": "15",
+  "voice": "am_michael",
+  "text": "Every door... except ours.",
+  "start": 35.288,
+  "end": 37.264
+ },
+ {
+  "id": "16",
+  "voice": "am_michael",
+  "text": "Six A was unlocked.",
+  "start": 38.044,
+  "end": 39.445
+ },
+ {
+  "id": "17",
+  "voice": "am_michael",
+  "text": "Coats still on the hooks.",
+  "start": 39.685,
+  "end": 41.029
+ },
+ {
+  "id": "18",
+  "voice": "am_michael",
+  "text": "Plates still on the table.",
+  "start": 41.209,
+  "end": 42.67
+ },
+ {
+  "id": "19",
+  "voice": "am_michael",
+  "text": "Like they vanished in the middle of dinner.",
+  "start": 42.91,
+  "end": 45.041
+ },
+ {
+  "id": "20",
+  "voice": "am_michael",
+  "text": "Back in our room, the radio clicked on by itself.",
+  "start": 45.641,
+  "end": 48.807
+ },
+ {
+  "id": "21",
+  "voice": "am_michael",
+  "text": "Same calm voice.",
+  "start": 49.047,
+  "end": 50.274
+ },
+ {
+  "id": "22",
+  "voice": "bm_george",
+  "text": "Residents on the list. Report to Wrigley Field by six P M. Bring nothing.",
+  "start": 50.634,
+  "end": 55.926
+ },
+ {
+  "id": "23",
+  "voice": "am_michael",
+  "text": "Mrs. Alvarez whispered,",
+  "start": 56.646,
+  "end": 58.409
+ },
+ {
+  "id": "24",
+  "voice": "af_heart",
+  "text": "My grandson went there yesterday. He promised he'd come back.",
+  "start": 58.589,
+  "end": 62.034
+ },
+ {
+  "id": "25",
+  "voice": "am_michael",
+  "text": "He never did.",
+  "start": 62.514,
+  "end": 63.659
+ },
+ {
+  "id": "26",
+  "voice": "am_michael",
+  "text": "Day six.",
+  "start": 64.499,
+  "end": 65.406
+ },
+ {
+  "id": "27",
+  "voice": "am_michael",
+  "text": "No food left.",
+  "start": 66.006,
+  "end": 67.137
+ },
+ {
+  "id": "28",
+  "voice": "am_michael",
+  "text": "Stay and freeze, or go and find out.",
+  "start": 67.437,
+  "end": 69.581
+ },
+ {
+  "id": "29",
+  "voice": "am_michael",
+  "text": "I started writing everything in this notebook.",
+  "start": 70.061,
+  "end": 72.461
+ },
+ {
+  "id": "30",
+  "voice": "am_michael",
+  "text": "In case someone finds it.",
+  "start": 72.761,
+  "end": 74.296
+ },
+ {
+  "id": "31",
+  "voice": "am_michael",
+  "text": "Five P M. Engines.",
+  "start": 75.016,
+  "end": 76.866
+ },
+ {
+  "id": "32",
+  "voice": "am_michael",
+  "text": "The first engines in six days.",
+  "start": 77.226,
+  "end": 79.224
+ },
+ {
+  "id": "33",
+  "voice": "am_michael",
+  "text": "A line of white trucks.",
+  "start": 79.824,
+  "end": 81.219
+ },
+ {
+  "id": "34",
+  "voice": "am_michael",
+  "text": "No lights. No markings.",
+  "start": 81.459,
+  "end": 83.19
+ },
+ {
+  "id": "35",
+  "voice": "am_michael",
+  "text": "They stopped right outside our building.",
+  "start": 83.37,
+  "end": 85.438
+ },
+ {
+  "id": "36",
+  "voice": "am_michael",
+  "text": "A man stepped out.",
+  "start": 86.038,
+  "end": 87.103
+ },
+ {
+  "id": "37",
+  "voice": "am_michael",
+  "text": "He looked up... straight at our window.",
+  "start": 87.463,
+  "end": 89.612
+ },
+ {
+  "id": "38",
+  "voice": "am_michael",
+  "text": "And he waved.",
+  "start": 90.512,
+  "end": 91.603
+ }
+]

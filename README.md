@@ -12,3 +12,14 @@ npm run render -- TikTok out/tiktok.mp4        # 1080x1920 MP4 with captions bur
 
 Another file name: `npm run render -- TikTok out/x.mp4 --props='{"video":"x.mp4","captions":"x.json"}'`.
 Non-English: `npm run transcribe -- public/clip.mp4 medium de`.
+
+## BLACKOUT Part 2
+
+```bash
+cd part2 && python3 build_audio.py   # narration lines -> soundtrack + word timings
+```
+```bash
+npm run render -- BlackoutPart2 out/blackout-part2.mp4
+```
+
+Narration lines and voices: `part2/lines.tsv` (regenerate one with `npx hyperframes tts`). Scenes: `src/blackout/`.

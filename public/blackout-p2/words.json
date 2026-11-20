@@ -1,0 +1,1500 @@
+[
+{
+"text": "Knock.",
+"start": 1.8,
+"end": 2.248,
+"line": "01",
+"voice": "am_michael"
+},
+{
+"text": "Knock.",
+"start": 2.248,
+"end": 2.695,
+"line": "01",
+"voice": "am_michael"
+},
+{
+"text": "Knock.",
+"start": 2.695,
+"end": 3.143,
+"line": "01",
+"voice": "am_michael"
+},
+{
+"text": "Three",
+"start": 3.863,
+"end": 4.269,
+"line": "02",
+"voice": "am_michael"
+},
+{
+"text": "slow",
+"start": 4.269,
+"end": 4.613,
+"line": "02",
+"voice": "am_michael"
+},
+{
+"text": "knocks.",
+"start": 4.613,
+"end": 5.081,
+"line": "02",
+"voice": "am_michael"
+},
+{
+"text": "Then",
+"start": 5.081,
+"end": 5.425,
+"line": "02",
+"voice": "am_michael"
+},
+{
+"text": "nothing.",
+"start": 5.425,
+"end": 5.956,
+"line": "02",
+"voice": "am_michael"
+},
+{
+"text": "Four",
+"start": 6.556,
+"end": 6.9,
+"line": "03",
+"voice": "am_michael"
+},
+{
+"text": "days",
+"start": 6.9,
+"end": 7.245,
+"line": "03",
+"voice": "am_michael"
+},
+{
+"text": "without",
+"start": 7.245,
+"end": 7.777,
+"line": "03",
+"voice": "am_michael"
+},
+{
+"text": "power.",
+"start": 7.777,
+"end": 8.183,
+"line": "03",
+"voice": "am_michael"
+},
+{
+"text": "Last",
+"start": 8.483,
+"end": 8.816,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "night,",
+"start": 8.816,
+"end": 9.209,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "a",
+"start": 9.209,
+"end": 9.36,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "voice",
+"start": 9.36,
+"end": 9.753,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "on",
+"start": 9.753,
+"end": 9.965,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "the",
+"start": 9.965,
+"end": 10.237,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "radio",
+"start": 10.237,
+"end": 10.63,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "read",
+"start": 10.63,
+"end": 10.963,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "my",
+"start": 10.963,
+"end": 11.175,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "address.",
+"start": 11.175,
+"end": 11.689,
+"line": "04",
+"voice": "am_michael"
+},
+{
+"text": "And",
+"start": 11.989,
+"end": 12.243,
+"line": "05",
+"voice": "am_michael"
+},
+{
+"text": "now",
+"start": 12.243,
+"end": 12.498,
+"line": "05",
+"voice": "am_michael"
+},
+{
+"text": "someone",
+"start": 12.498,
+"end": 12.98,
+"line": "05",
+"voice": "am_michael"
+},
+{
+"text": "was",
+"start": 12.98,
+"end": 13.235,
+"line": "05",
+"voice": "am_michael"
+},
+{
+"text": "at",
+"start": 13.235,
+"end": 13.433,
+"line": "05",
+"voice": "am_michael"
+},
+{
+"text": "my",
+"start": 13.433,
+"end": 13.631,
+"line": "05",
+"voice": "am_michael"
+},
+{
+"text": "door.",
+"start": 13.631,
+"end": 13.943,
+"line": "05",
+"voice": "am_michael"
+},
+{
+"text": "Mrs.",
+"start": 14.543,
+"end": 14.874,
+"line": "06",
+"voice": "am_michael"
+},
+{
+"text": "Alvarez",
+"start": 14.874,
+"end": 15.5,
+"line": "06",
+"voice": "am_michael"
+},
+{
+"text": "grabbed",
+"start": 15.5,
+"end": 16.125,
+"line": "06",
+"voice": "am_michael"
+},
+{
+"text": "my",
+"start": 16.125,
+"end": 16.383,
+"line": "06",
+"voice": "am_michael"
+},
+{
+"text": "arm.",
+"start": 16.383,
+"end": 16.714,
+"line": "06",
+"voice": "am_michael"
+},
+{
+"text": "Neither",
+"start": 17.014,
+"end": 17.489,
+"line": "07",
+"voice": "am_michael"
+},
+{
+"text": "of",
+"start": 17.489,
+"end": 17.685,
+"line": "07",
+"voice": "am_michael"
+},
+{
+"text": "us",
+"start": 17.685,
+"end": 17.88,
+"line": "07",
+"voice": "am_michael"
+},
+{
+"text": "breathed.",
+"start": 17.88,
+"end": 18.411,
+"line": "07",
+"voice": "am_michael"
+},
+{
+"text": "Then",
+"start": 19.131,
+"end": 19.402,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "a",
+"start": 19.402,
+"end": 19.524,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "piece",
+"start": 19.524,
+"end": 19.844,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "of",
+"start": 19.844,
+"end": 20.016,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "paper",
+"start": 20.016,
+"end": 20.335,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "slid",
+"start": 20.335,
+"end": 20.605,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "under",
+"start": 20.605,
+"end": 20.924,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "the",
+"start": 20.924,
+"end": 21.145,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "door.",
+"start": 21.145,
+"end": 21.416,
+"line": "08",
+"voice": "am_michael"
+},
+{
+"text": "One",
+"start": 21.716,
+"end": 22.013,
+"line": "09",
+"voice": "am_michael"
+},
+{
+"text": "line,",
+"start": 22.013,
+"end": 22.375,
+"line": "09",
+"voice": "am_michael"
+},
+{
+"text": "in",
+"start": 22.375,
+"end": 22.606,
+"line": "09",
+"voice": "am_michael"
+},
+{
+"text": "pencil.",
+"start": 22.606,
+"end": 23.101,
+"line": "09",
+"voice": "am_michael"
+},
+{
+"text": "Leave",
+"start": 23.461,
+"end": 23.877,
+"line": "10",
+"voice": "am_michael"
+},
+{
+"text": "before",
+"start": 23.877,
+"end": 24.357,
+"line": "10",
+"voice": "am_michael"
+},
+{
+"text": "sunrise.",
+"start": 24.357,
+"end": 24.901,
+"line": "10",
+"voice": "am_michael"
+},
+{
+"text": "Don't",
+"start": 24.901,
+"end": 25.253,
+"line": "10",
+"voice": "am_michael"
+},
+{
+"text": "stay",
+"start": 25.253,
+"end": 25.605,
+"line": "10",
+"voice": "am_michael"
+},
+{
+"text": "on",
+"start": 25.605,
+"end": 25.829,
+"line": "10",
+"voice": "am_michael"
+},
+{
+"text": "the",
+"start": 25.829,
+"end": 26.117,
+"line": "10",
+"voice": "am_michael"
+},
+{
+"text": "list.",
+"start": 26.117,
+"end": 26.469,
+"line": "10",
+"voice": "am_michael"
+},
+{
+"text": "Day",
+"start": 27.309,
+"end": 27.742,
+"line": "11",
+"voice": "am_michael"
+},
+{
+"text": "five.",
+"start": 27.742,
+"end": 28.271,
+"line": "11",
+"voice": "am_michael"
+},
+{
+"text": "At",
+"start": 28.871,
+"end": 29.075,
+"line": "12",
+"voice": "am_michael"
+},
+{
+"text": "sunrise,",
+"start": 29.075,
+"end": 29.571,
+"line": "12",
+"voice": "am_michael"
+},
+{
+"text": "I",
+"start": 29.571,
+"end": 29.717,
+"line": "12",
+"voice": "am_michael"
+},
+{
+"text": "opened",
+"start": 29.717,
+"end": 30.155,
+"line": "12",
+"voice": "am_michael"
+},
+{
+"text": "the",
+"start": 30.155,
+"end": 30.418,
+"line": "12",
+"voice": "am_michael"
+},
+{
+"text": "door.",
+"start": 30.418,
+"end": 30.739,
+"line": "12",
+"voice": "am_michael"
+},
+{
+"text": "The",
+"start": 31.039,
+"end": 31.3,
+"line": "13",
+"voice": "am_michael"
+},
+{
+"text": "hallway",
+"start": 31.3,
+"end": 31.794,
+"line": "13",
+"voice": "am_michael"
+},
+{
+"text": "was",
+"start": 31.794,
+"end": 32.055,
+"line": "13",
+"voice": "am_michael"
+},
+{
+"text": "empty.",
+"start": 32.055,
+"end": 32.433,
+"line": "13",
+"voice": "am_michael"
+},
+{
+"text": "But",
+"start": 32.733,
+"end": 32.979,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "every",
+"start": 32.979,
+"end": 33.335,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "door",
+"start": 33.335,
+"end": 33.637,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "on",
+"start": 33.637,
+"end": 33.829,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "our",
+"start": 33.829,
+"end": 34.075,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "floor",
+"start": 34.075,
+"end": 34.431,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "had",
+"start": 34.431,
+"end": 34.678,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "a",
+"start": 34.678,
+"end": 34.815,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "red",
+"start": 34.815,
+"end": 35.061,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "X",
+"start": 35.061,
+"end": 35.198,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "painted",
+"start": 35.198,
+"end": 35.664,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "on",
+"start": 35.664,
+"end": 35.856,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "it.",
+"start": 35.856,
+"end": 36.048,
+"line": "14",
+"voice": "am_michael"
+},
+{
+"text": "Every",
+"start": 36.588,
+"end": 37.102,
+"line": "15",
+"voice": "am_michael"
+},
+{
+"text": "door...",
+"start": 37.102,
+"end": 37.537,
+"line": "15",
+"voice": "am_michael"
+},
+{
+"text": "except",
+"start": 37.537,
+"end": 38.13,
+"line": "15",
+"voice": "am_michael"
+},
+{
+"text": "ours.",
+"start": 38.13,
+"end": 38.564,
+"line": "15",
+"voice": "am_michael"
+},
+{
+"text": "6A",
+"start": 39.344,
+"end": 39.625,
+"line": "16",
+"voice": "am_michael"
+},
+{
+"text": "was",
+"start": 39.625,
+"end": 39.985,
+"line": "16",
+"voice": "am_michael"
+},
+{
+"text": "unlocked.",
+"start": 39.985,
+"end": 40.745,
+"line": "16",
+"voice": "am_michael"
+},
+{
+"text": "Coats",
+"start": 40.985,
+"end": 41.303,
+"line": "17",
+"voice": "am_michael"
+},
+{
+"text": "still",
+"start": 41.303,
+"end": 41.62,
+"line": "17",
+"voice": "am_michael"
+},
+{
+"text": "on",
+"start": 41.62,
+"end": 41.791,
+"line": "17",
+"voice": "am_michael"
+},
+{
+"text": "the",
+"start": 41.791,
+"end": 42.011,
+"line": "17",
+"voice": "am_michael"
+},
+{
+"text": "hooks.",
+"start": 42.011,
+"end": 42.329,
+"line": "17",
+"voice": "am_michael"
+},
+{
+"text": "Plates",
+"start": 42.509,
+"end": 42.893,
+"line": "18",
+"voice": "am_michael"
+},
+{
+"text": "still",
+"start": 42.893,
+"end": 43.227,
+"line": "18",
+"voice": "am_michael"
+},
+{
+"text": "on",
+"start": 43.227,
+"end": 43.406,
+"line": "18",
+"voice": "am_michael"
+},
+{
+"text": "the",
+"start": 43.406,
+"end": 43.637,
+"line": "18",
+"voice": "am_michael"
+},
+{
+"text": "table.",
+"start": 43.637,
+"end": 43.97,
+"line": "18",
+"voice": "am_michael"
+},
+{
+"text": "Like",
+"start": 44.21,
+"end": 44.46,
+"line": "19",
+"voice": "am_michael"
+},
+{
+"text": "they",
+"start": 44.46,
+"end": 44.709,
+"line": "19",
+"voice": "am_michael"
+},
+{
+"text": "vanished",
+"start": 44.709,
+"end": 45.14,
+"line": "19",
+"voice": "am_michael"
+},
+{
+"text": "in",
+"start": 45.14,
+"end": 45.299,
+"line": "19",
+"voice": "am_michael"
+},
+{
+"text": "the",
+"start": 45.299,
+"end": 45.503,
+"line": "19",
+"voice": "am_michael"
+},
+{
+"text": "middle",
+"start": 45.503,
+"end": 45.843,
+"line": "19",
+"voice": "am_michael"
+},
+{
+"text": "of",
+"start": 45.843,
+"end": 46.001,
+"line": "19",
+"voice": "am_michael"
+},
+{
+"text": "dinner.",
+"start": 46.001,
+"end": 46.341,
+"line": "19",
+"voice": "am_michael"
+},
+{
+"text": "Back",
+"start": 46.941,
+"end": 47.27,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "in",
+"start": 47.27,
+"end": 47.479,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "our",
+"start": 47.479,
+"end": 47.748,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "room,",
+"start": 47.748,
+"end": 48.076,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "the",
+"start": 48.076,
+"end": 48.345,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "radio",
+"start": 48.345,
+"end": 48.733,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "clicked",
+"start": 48.733,
+"end": 49.241,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "on",
+"start": 49.241,
+"end": 49.45,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "by",
+"start": 49.45,
+"end": 49.659,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "itself.",
+"start": 49.659,
+"end": 50.107,
+"line": "20",
+"voice": "am_michael"
+},
+{
+"text": "Same",
+"start": 50.347,
+"end": 50.732,
+"line": "21",
+"voice": "am_michael"
+},
+{
+"text": "calm",
+"start": 50.732,
+"end": 51.118,
+"line": "21",
+"voice": "am_michael"
+},
+{
+"text": "voice.",
+"start": 51.118,
+"end": 51.574,
+"line": "21",
+"voice": "am_michael"
+},
+{
+"text": "Residents",
+"start": 51.934,
+"end": 52.674,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "on",
+"start": 52.674,
+"end": 52.92,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "the",
+"start": 52.92,
+"end": 53.238,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "list.",
+"start": 53.238,
+"end": 53.625,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "Report",
+"start": 53.625,
+"end": 54.154,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "to",
+"start": 54.154,
+"end": 54.401,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "Wrigley",
+"start": 54.401,
+"end": 55.0,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "Field",
+"start": 55.0,
+"end": 55.458,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "by",
+"start": 55.458,
+"end": 55.705,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "6",
+"start": 55.705,
+"end": 55.881,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "PM.",
+"start": 55.881,
+"end": 56.128,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "Bring",
+"start": 56.128,
+"end": 56.586,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "nothing.",
+"start": 56.586,
+"end": 57.185,
+"line": "22",
+"voice": "bm_george"
+},
+{
+"text": "Mrs.",
+"start": 57.905,
+"end": 58.243,
+"line": "23",
+"voice": "am_michael"
+},
+{
+"text": "Alvarez",
+"start": 58.243,
+"end": 58.88,
+"line": "23",
+"voice": "am_michael"
+},
+{
+"text": "whispered,",
+"start": 58.88,
+"end": 59.668,
+"line": "23",
+"voice": "am_michael"
+},
+{
+"text": "My",
+"start": 59.848,
+"end": 60.036,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "grandson",
+"start": 60.036,
+"end": 60.545,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "went",
+"start": 60.545,
+"end": 60.84,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "there",
+"start": 60.84,
+"end": 61.188,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "yesterday.",
+"start": 61.188,
+"end": 61.751,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "He",
+"start": 61.751,
+"end": 61.938,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "promised",
+"start": 61.938,
+"end": 62.447,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "he'd",
+"start": 62.447,
+"end": 62.688,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "come",
+"start": 62.688,
+"end": 62.983,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "back.",
+"start": 62.983,
+"end": 63.278,
+"line": "24",
+"voice": "af_heart"
+},
+{
+"text": "He",
+"start": 63.758,
+"end": 64.034,
+"line": "25",
+"voice": "am_michael"
+},
+{
+"text": "never",
+"start": 64.034,
+"end": 64.548,
+"line": "25",
+"voice": "am_michael"
+},
+{
+"text": "did.",
+"start": 64.548,
+"end": 64.903,
+"line": "25",
+"voice": "am_michael"
+},
+{
+"text": "Day",
+"start": 65.743,
+"end": 66.197,
+"line": "26",
+"voice": "am_michael"
+},
+{
+"text": "six.",
+"start": 66.197,
+"end": 66.651,
+"line": "26",
+"voice": "am_michael"
+},
+{
+"text": "No",
+"start": 67.251,
+"end": 67.524,
+"line": "27",
+"voice": "am_michael"
+},
+{
+"text": "food",
+"start": 67.524,
+"end": 67.952,
+"line": "27",
+"voice": "am_michael"
+},
+{
+"text": "left.",
+"start": 67.952,
+"end": 68.381,
+"line": "27",
+"voice": "am_michael"
+},
+{
+"text": "Stay",
+"start": 68.681,
+"end": 68.984,
+"line": "28",
+"voice": "am_michael"
+},
+{
+"text": "and",
+"start": 68.984,
+"end": 69.231,
+"line": "28",
+"voice": "am_michael"
+},
+{
+"text": "freeze,",
+"start": 69.231,
+"end": 69.643,
+"line": "28",
+"voice": "am_michael"
+},
+{
+"text": "or",
+"start": 69.643,
+"end": 69.836,
+"line": "28",
+"voice": "am_michael"
+},
+{
+"text": "go",
+"start": 69.836,
+"end": 70.028,
+"line": "28",
+"voice": "am_michael"
+},
+{
+"text": "and",
+"start": 70.028,
+"end": 70.275,
+"line": "28",
+"voice": "am_michael"
+},
+{
+"text": "find",
+"start": 70.275,
+"end": 70.578,
+"line": "28",
+"voice": "am_michael"
+},
+{
+"text": "out.",
+"start": 70.578,
+"end": 70.825,
+"line": "28",
+"voice": "am_michael"
+},
+{
+"text": "I",
+"start": 71.305,
+"end": 71.426,
+"line": "29",
+"voice": "am_michael"
+},
+{
+"text": "started",
+"start": 71.426,
+"end": 71.838,
+"line": "29",
+"voice": "am_michael"
+},
+{
+"text": "writing",
+"start": 71.838,
+"end": 72.25,
+"line": "29",
+"voice": "am_michael"
+},
+{
+"text": "everything",
+"start": 72.25,
+"end": 72.808,
+"line": "29",
+"voice": "am_michael"
+},
+{
+"text": "in",
+"start": 72.808,
+"end": 72.977,
+"line": "29",
+"voice": "am_michael"
+},
+{
+"text": "this",
+"start": 72.977,
+"end": 73.244,
+"line": "29",
+"voice": "am_michael"
+},
+{
+"text": "notebook.",
+"start": 73.244,
+"end": 73.705,
+"line": "29",
+"voice": "am_michael"
+},
+{
+"text": "In",
+"start": 74.005,
+"end": 74.2,
+"line": "30",
+"voice": "am_michael"
+},
+{
+"text": "case",
+"start": 74.2,
+"end": 74.507,
+"line": "30",
+"voice": "am_michael"
+},
+{
+"text": "someone",
+"start": 74.507,
+"end": 74.982,
+"line": "30",
+"voice": "am_michael"
+},
+{
+"text": "finds",
+"start": 74.982,
+"end": 75.345,
+"line": "30",
+"voice": "am_michael"
+},
+{
+"text": "it.",
+"start": 75.345,
+"end": 75.54,
+"line": "30",
+"voice": "am_michael"
+},
+{
+"text": "5",
+"start": 76.26,
+"end": 76.579,
+"line": "31",
+"voice": "am_michael"
+},
+{
+"text": "PM.",
+"start": 76.579,
+"end": 77.026,
+"line": "31",
+"voice": "am_michael"
+},
+{
+"text": "Engines.",
+"start": 77.026,
+"end": 78.11,
+"line": "31",
+"voice": "am_michael"
+},
+{
+"text": "The",
+"start": 78.47,
+"end": 78.742,
+"line": "32",
+"voice": "am_michael"
+},
+{
+"text": "first",
+"start": 78.742,
+"end": 79.136,
+"line": "32",
+"voice": "am_michael"
+},
+{
+"text": "engines",
+"start": 79.136,
+"end": 79.651,
+"line": "32",
+"voice": "am_michael"
+},
+{
+"text": "in",
+"start": 79.651,
+"end": 79.862,
+"line": "32",
+"voice": "am_michael"
+},
+{
+"text": "six",
+"start": 79.862,
+"end": 80.135,
+"line": "32",
+"voice": "am_michael"
+},
+{
+"text": "days.",
+"start": 80.135,
+"end": 80.468,
+"line": "32",
+"voice": "am_michael"
+},
+{
+"text": "A",
+"start": 81.068,
+"end": 81.205,
+"line": "33",
+"voice": "am_michael"
+},
+{
+"text": "line",
+"start": 81.205,
+"end": 81.506,
+"line": "33",
+"voice": "am_michael"
+},
+{
+"text": "of",
+"start": 81.506,
+"end": 81.697,
+"line": "33",
+"voice": "am_michael"
+},
+{
+"text": "white",
+"start": 81.697,
+"end": 82.053,
+"line": "33",
+"voice": "am_michael"
+},
+{
+"text": "trucks.",
+"start": 82.053,
+"end": 82.463,
+"line": "33",
+"voice": "am_michael"
+},
+{
+"text": "No",
+"start": 82.703,
+"end": 82.956,
+"line": "34",
+"voice": "am_michael"
+},
+{
+"text": "lights.",
+"start": 82.956,
+"end": 83.497,
+"line": "34",
+"voice": "am_michael"
+},
+{
+"text": "No",
+"start": 83.497,
+"end": 83.749,
+"line": "34",
+"voice": "am_michael"
+},
+{
+"text": "markings.",
+"start": 83.749,
+"end": 84.434,
+"line": "34",
+"voice": "am_michael"
+},
+{
+"text": "They",
+"start": 84.614,
+"end": 84.879,
+"line": "35",
+"voice": "am_michael"
+},
+{
+"text": "stopped",
+"start": 84.879,
+"end": 85.288,
+"line": "35",
+"voice": "am_michael"
+},
+{
+"text": "right",
+"start": 85.288,
+"end": 85.6,
+"line": "35",
+"voice": "am_michael"
+},
+{
+"text": "outside",
+"start": 85.6,
+"end": 86.009,
+"line": "35",
+"voice": "am_michael"
+},
+{
+"text": "our",
+"start": 86.009,
+"end": 86.226,
+"line": "35",
+"voice": "am_michael"
+},
+{
+"text": "building.",
+"start": 86.226,
+"end": 86.682,
+"line": "35",
+"voice": "am_michael"
+},
+{
+"text": "A",
+"start": 87.282,
+"end": 87.415,
+"line": "36",
+"voice": "am_michael"
+},
+{
+"text": "man",
+"start": 87.415,
+"end": 87.655,
+"line": "36",
+"voice": "am_michael"
+},
+{
+"text": "stepped",
+"start": 87.655,
+"end": 88.107,
+"line": "36",
+"voice": "am_michael"
+},
+{
+"text": "out.",
+"start": 88.107,
+"end": 88.347,
+"line": "36",
+"voice": "am_michael"
+},
+{
+"text": "He",
+"start": 88.707,
+"end": 88.897,
+"line": "37",
+"voice": "am_michael"
+},
+{
+"text": "looked",
+"start": 88.897,
+"end": 89.305,
+"line": "37",
+"voice": "am_michael"
+},
+{
+"text": "up...",
+"start": 89.305,
+"end": 89.496,
+"line": "37",
+"voice": "am_michael"
+},
+{
+"text": "straight",
+"start": 89.496,
+"end": 90.013,
+"line": "37",
+"voice": "am_michael"
+},
+{
+"text": "at",
+"start": 90.013,
+"end": 90.203,
+"line": "37",
+"voice": "am_michael"
+},
+{
+"text": "our",
+"start": 90.203,
+"end": 90.448,
+"line": "37",
+"voice": "am_michael"
+},
+{
+"text": "window.",
+"start": 90.448,
+"end": 90.856,
+"line": "37",
+"voice": "am_michael"
+},
+{
+"text": "And",
+"start": 91.756,
+"end": 92.095,
+"line": "38",
+"voice": "am_michael"
+},
+{
+"text": "he",
+"start": 92.095,
+"end": 92.358,
+"line": "38",
+"voice": "am_michael"
+},
+{
+"text": "waved.",
+"start": 92.358,
+"end": 92.847,
+"line": "38",
+"voice": "am_michael"
+}
+]

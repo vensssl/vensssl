@@ -1,10 +1,20 @@
 import { Composition, staticFile } from "remotion";
 import { ALL_FORMATS, Input, UrlSource } from "mediabunny";
 import { TikTok, TikTokProps } from "./TikTok";
+import { BlackoutPart2, BLACKOUT_P2_FRAMES } from "./blackout/BlackoutPart2";
 
 const FPS = 30;
 
 export const RemotionRoot: React.FC = () => (
+  <>
+  <Composition
+    id="BlackoutPart2"
+    component={BlackoutPart2}
+    width={1080}
+    height={1920}
+    fps={FPS}
+    durationInFrames={BLACKOUT_P2_FRAMES}
+  />
   <Composition
     id="TikTok"
     component={TikTok}
@@ -23,4 +33,5 @@ export const RemotionRoot: React.FC = () => (
       return { durationInFrames: Math.ceil(seconds * FPS) };
     }}
   />
+  </>
 );
