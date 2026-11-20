@@ -1,0 +1,6 @@
+node_modules/
+out/
+.whisper/
+.tmp/
+public/*.mp4
+public/*.mov
