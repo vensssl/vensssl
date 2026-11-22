@@ -23,3 +23,14 @@ npm run render -- BlackoutPart2 out/blackout-part2.mp4
 ```
 
 Narration lines and voices: `part2/lines.tsv` (regenerate one with `npx hyperframes tts`). Scenes: `src/blackout/`.
+
+## BLACKOUT Part 4
+
+```bash
+cd part4 && python3 build_audio.py   # narration lines -> soundtrack + word timings
+```
+```bash
+npm run render -- BlackoutPart4 out/blackout-part4.mp4
+```
+
+Narration lines and voices: `part4/lines.tsv`. Scenes: `src/blackout/scenes4.tsx`.
