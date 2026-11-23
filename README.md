@@ -30,7 +30,7 @@ Narrated 9:16 shorts in a dark-stage / spotlight / neon-icon style. Each has a s
 
 ```bash
 pip install kokoro-onnx soundfile scipy numpy
-cd dayone && python3 build_audio.py      # also wall/, switch/ (narration via `npx hyperframes tts`)
+cd dayone && python3 ../scripts/voice.py british && python3 build_audio.py   # also wall/, switch/; voice presets in scripts/voice.py
 npx remotion render DayOne out/01-day-one.mp4      # TheWall, TheSwitch
 ```
 

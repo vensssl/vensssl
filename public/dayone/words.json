@@ -2,553 +2,553 @@
 {
 "text": "Two",
 "start": 1.1,
-"end": 1.357,
+"end": 1.444,
 "line": "01"
 },
 {
 "text": "people",
-"start": 1.357,
-"end": 1.768,
+"start": 1.444,
+"end": 1.995,
 "line": "01"
 },
 {
 "text": "start",
-"start": 1.768,
-"end": 2.127,
+"start": 1.995,
+"end": 2.477,
 "line": "01"
 },
 {
 "text": "on",
-"start": 2.127,
-"end": 2.332,
+"start": 2.477,
+"end": 2.753,
 "line": "01"
 },
 {
 "text": "the",
-"start": 2.332,
-"end": 2.589,
+"start": 2.753,
+"end": 3.097,
 "line": "01"
 },
 {
 "text": "same",
-"start": 2.589,
-"end": 2.897,
+"start": 3.097,
+"end": 3.51,
 "line": "01"
 },
 {
 "text": "day.",
-"start": 2.897,
-"end": 3.154,
+"start": 3.51,
+"end": 3.855,
 "line": "01"
 },
 {
 "text": "Same",
-"start": 3.504,
-"end": 3.919,
+"start": 4.205,
+"end": 4.701,
 "line": "02"
 },
 {
 "text": "age.",
-"start": 3.919,
-"end": 4.265,
+"start": 4.701,
+"end": 5.115,
 "line": "02"
 },
 {
 "text": "Same",
-"start": 4.265,
-"end": 4.68,
+"start": 5.115,
+"end": 5.612,
 "line": "02"
 },
 {
 "text": "city.",
-"start": 4.68,
-"end": 5.096,
+"start": 5.612,
+"end": 6.109,
 "line": "02"
 },
 {
 "text": "Same",
-"start": 5.096,
-"end": 5.511,
+"start": 6.109,
+"end": 6.606,
 "line": "02"
 },
 {
 "text": "zero",
-"start": 5.511,
-"end": 5.926,
+"start": 6.606,
+"end": 7.102,
 "line": "02"
 },
 {
 "text": "dollars.",
-"start": 5.926,
-"end": 6.549,
+"start": 7.102,
+"end": 7.847,
 "line": "02"
 },
 {
 "text": "One",
-"start": 6.999,
-"end": 7.226,
+"start": 8.297,
+"end": 8.589,
 "line": "03"
 },
 {
 "text": "of",
-"start": 7.226,
-"end": 7.407,
+"start": 8.589,
+"end": 8.822,
 "line": "03"
 },
 {
 "text": "them",
-"start": 7.407,
-"end": 7.678,
+"start": 8.822,
+"end": 9.172,
 "line": "03"
 },
 {
 "text": "picks",
-"start": 7.678,
-"end": 7.995,
+"start": 9.172,
+"end": 9.58,
 "line": "03"
 },
 {
 "text": "up",
-"start": 7.995,
-"end": 8.176,
+"start": 9.58,
+"end": 9.813,
 "line": "03"
 },
 {
 "text": "a",
-"start": 8.176,
-"end": 8.312,
+"start": 9.813,
+"end": 9.988,
 "line": "03"
 },
 {
 "text": "phone.",
-"start": 8.312,
-"end": 8.629,
+"start": 9.988,
+"end": 10.396,
 "line": "03"
 },
 {
 "text": "The",
-"start": 8.879,
-"end": 9.105,
+"start": 10.646,
+"end": 10.935,
 "line": "04"
 },
 {
 "text": "other",
-"start": 9.105,
-"end": 9.421,
+"start": 10.935,
+"end": 11.339,
 "line": "04"
 },
 {
 "text": "one",
-"start": 9.421,
-"end": 9.647,
+"start": 11.339,
+"end": 11.628,
 "line": "04"
 },
 {
 "text": "picks",
-"start": 9.647,
-"end": 9.963,
+"start": 11.628,
+"end": 12.032,
 "line": "04"
 },
 {
 "text": "up",
-"start": 9.963,
-"end": 10.143,
+"start": 12.032,
+"end": 12.263,
 "line": "04"
 },
 {
 "text": "a",
-"start": 10.143,
-"end": 10.279,
+"start": 12.263,
+"end": 12.436,
 "line": "04"
 },
 {
 "text": "book.",
-"start": 10.279,
-"end": 10.55,
+"start": 12.436,
+"end": 12.782,
 "line": "04"
 },
 {
 "text": "On",
-"start": 11.05,
-"end": 11.271,
+"start": 13.282,
+"end": 13.52,
 "line": "05"
 },
 {
 "text": "day",
-"start": 11.271,
-"end": 11.548,
+"start": 13.52,
+"end": 13.816,
 "line": "05"
 },
 {
 "text": "one,",
-"start": 11.548,
-"end": 11.825,
+"start": 13.816,
+"end": 14.113,
 "line": "05"
 },
 {
 "text": "nobody",
-"start": 11.825,
-"end": 12.268,
+"start": 14.113,
+"end": 14.587,
 "line": "05"
 },
 {
 "text": "can",
-"start": 12.268,
-"end": 12.545,
+"start": 14.587,
+"end": 14.884,
 "line": "05"
 },
 {
 "text": "tell",
-"start": 12.545,
-"end": 12.878,
+"start": 14.884,
+"end": 15.24,
 "line": "05"
 },
 {
 "text": "the",
-"start": 12.878,
-"end": 13.155,
+"start": 15.24,
+"end": 15.537,
 "line": "05"
 },
 {
 "text": "difference.",
-"start": 13.155,
-"end": 13.819,
+"start": 15.537,
+"end": 16.249,
 "line": "05"
 },
 {
 "text": "Day",
-"start": 14.269,
-"end": 14.6,
+"start": 16.699,
+"end": 17.124,
 "line": "06"
 },
 {
 "text": "30.",
-"start": 14.6,
-"end": 14.864,
+"start": 17.124,
+"end": 17.465,
 "line": "06"
 },
 {
 "text": "Still",
-"start": 14.864,
-"end": 15.326,
+"start": 17.465,
+"end": 18.061,
 "line": "06"
 },
 {
 "text": "nothing.",
-"start": 15.326,
-"end": 15.921,
+"start": 18.061,
+"end": 18.828,
 "line": "06"
 },
 {
 "text": "Day",
-"start": 16.271,
-"end": 16.627,
+"start": 19.178,
+"end": 19.551,
 "line": "07"
 },
 {
 "text": "100.",
-"start": 16.627,
-"end": 16.982,
+"start": 19.551,
+"end": 19.925,
 "line": "07"
 },
 {
 "text": "They",
-"start": 16.982,
-"end": 17.409,
+"start": 19.925,
+"end": 20.373,
 "line": "07"
 },
 {
 "text": "look",
-"start": 17.409,
-"end": 17.836,
+"start": 20.373,
+"end": 20.822,
 "line": "07"
 },
 {
 "text": "exactly",
-"start": 17.836,
-"end": 18.477,
+"start": 20.822,
+"end": 21.494,
 "line": "07"
 },
 {
 "text": "the",
-"start": 18.477,
-"end": 18.833,
+"start": 21.494,
+"end": 21.868,
 "line": "07"
 },
 {
 "text": "same.",
-"start": 18.833,
-"end": 19.26,
+"start": 21.868,
+"end": 22.316,
 "line": "07"
 },
 {
 "text": "That's",
-"start": 19.76,
-"end": 20.185,
+"start": 22.816,
+"end": 23.339,
 "line": "08"
 },
 {
 "text": "the",
-"start": 20.185,
-"end": 20.489,
+"start": 23.339,
+"end": 23.713,
 "line": "08"
 },
 {
 "text": "trap.",
-"start": 20.489,
-"end": 20.853,
+"start": 23.713,
+"end": 24.161,
 "line": "08"
 },
 {
 "text": "1%",
-"start": 21.403,
-"end": 21.601,
+"start": 24.711,
+"end": 24.926,
 "line": "09"
 },
 {
 "text": "better",
-"start": 21.601,
-"end": 22.129,
+"start": 24.926,
+"end": 25.5,
 "line": "09"
 },
 {
 "text": "every",
-"start": 22.129,
-"end": 22.591,
+"start": 25.5,
+"end": 26.001,
 "line": "09"
 },
 {
 "text": "day",
-"start": 22.591,
-"end": 22.921,
+"start": 26.001,
+"end": 26.359,
 "line": "09"
 },
 {
 "text": "looks",
-"start": 22.921,
-"end": 23.383,
+"start": 26.359,
+"end": 26.861,
 "line": "09"
 },
 {
 "text": "like",
-"start": 23.383,
-"end": 23.779,
+"start": 26.861,
+"end": 27.291,
 "line": "09"
 },
 {
 "text": "nothing,",
-"start": 23.779,
-"end": 24.373,
+"start": 27.291,
+"end": 27.936,
 "line": "09"
 },
 {
 "text": "until",
-"start": 24.523,
-"end": 25.038,
+"start": 28.086,
+"end": 28.716,
 "line": "10"
 },
 {
 "text": "it",
-"start": 25.038,
-"end": 25.331,
+"start": 28.716,
+"end": 29.077,
 "line": "10"
 },
 {
 "text": "isn't.",
-"start": 25.331,
-"end": 25.772,
+"start": 29.077,
+"end": 29.617,
 "line": "10"
 },
 {
 "text": "1.01,",
-"start": 26.372,
-"end": 27.01,
+"start": 30.217,
+"end": 30.883,
 "line": "11"
 },
 {
 "text": "to",
-"start": 27.01,
-"end": 27.52,
+"start": 30.883,
+"end": 31.416,
 "line": "11"
 },
 {
 "text": "the",
-"start": 27.52,
-"end": 28.158,
+"start": 31.416,
+"end": 32.082,
 "line": "11"
 },
 {
 "text": "power",
-"start": 28.158,
-"end": 29.05,
+"start": 32.082,
+"end": 33.015,
 "line": "11"
 },
 {
 "text": "of",
-"start": 29.05,
-"end": 29.56,
+"start": 33.015,
+"end": 33.547,
 "line": "11"
 },
 {
 "text": "365,",
-"start": 29.56,
-"end": 30.198,
+"start": 33.547,
+"end": 34.213,
 "line": "11"
 },
 {
 "text": "is",
-"start": 30.198,
-"end": 30.708,
+"start": 34.213,
+"end": 34.746,
 "line": "11"
 },
 {
 "text": "37.",
-"start": 30.708,
-"end": 31.218,
+"start": 34.746,
+"end": 35.279,
 "line": "11"
 },
 {
 "text": "0.99,",
-"start": 31.668,
-"end": 32.227,
+"start": 35.729,
+"end": 36.303,
 "line": "12"
 },
 {
 "text": "to",
-"start": 32.227,
-"end": 32.674,
+"start": 36.303,
+"end": 36.762,
 "line": "12"
 },
 {
 "text": "the",
-"start": 32.674,
-"end": 33.233,
+"start": 36.762,
+"end": 37.337,
 "line": "12"
 },
 {
 "text": "power",
-"start": 33.233,
-"end": 34.016,
+"start": 37.337,
+"end": 38.14,
 "line": "12"
 },
 {
 "text": "of",
-"start": 34.016,
-"end": 34.463,
+"start": 38.14,
+"end": 38.6,
 "line": "12"
 },
 {
 "text": "365,",
-"start": 34.463,
-"end": 35.021,
+"start": 38.6,
+"end": 39.174,
 "line": "12"
 },
 {
 "text": "is",
-"start": 35.021,
-"end": 35.468,
+"start": 39.174,
+"end": 39.633,
 "line": "12"
 },
 {
 "text": "almost",
-"start": 35.468,
-"end": 36.363,
+"start": 39.633,
+"end": 40.552,
 "line": "12"
 },
 {
 "text": "zero.",
-"start": 36.363,
-"end": 37.033,
+"start": 40.552,
+"end": 41.241,
 "line": "12"
 },
 {
 "text": "Same",
-"start": 37.583,
-"end": 37.94,
+"start": 41.791,
+"end": 42.208,
 "line": "13"
 },
 {
 "text": "start.",
-"start": 37.94,
-"end": 38.357,
+"start": 42.208,
+"end": 42.694,
 "line": "13"
 },
 {
 "text": "Different",
-"start": 38.357,
-"end": 39.011,
+"start": 42.694,
+"end": 43.459,
 "line": "13"
 },
 {
 "text": "habits.",
-"start": 39.011,
-"end": 39.487,
+"start": 43.459,
+"end": 44.015,
 "line": "13"
 },
 {
 "text": "So",
-"start": 39.987,
-"end": 40.176,
+"start": 44.515,
+"end": 44.731,
 "line": "14"
 },
 {
 "text": "which",
-"start": 40.176,
-"end": 40.507,
+"start": 44.731,
+"end": 45.108,
 "line": "14"
 },
 {
 "text": "one",
-"start": 40.507,
-"end": 40.743,
+"start": 45.108,
+"end": 45.378,
 "line": "14"
 },
 {
 "text": "are",
-"start": 40.743,
-"end": 40.979,
+"start": 45.378,
+"end": 45.647,
 "line": "14"
 },
 {
 "text": "you",
-"start": 40.979,
-"end": 41.215,
+"start": 45.647,
+"end": 45.916,
 "line": "14"
 },
 {
 "text": "going",
-"start": 41.215,
-"end": 41.545,
+"start": 45.916,
+"end": 46.294,
 "line": "14"
 },
 {
 "text": "to",
-"start": 41.545,
-"end": 41.734,
+"start": 46.294,
+"end": 46.509,
 "line": "14"
 },
 {
 "text": "be,",
-"start": 41.734,
-"end": 41.923,
+"start": 46.509,
+"end": 46.725,
 "line": "14"
 },
 {
 "text": "on",
-"start": 41.923,
-"end": 42.112,
+"start": 46.725,
+"end": 46.94,
 "line": "14"
 },
 {
 "text": "day",
-"start": 42.112,
-"end": 42.348,
+"start": 46.94,
+"end": 47.21,
 "line": "14"
 },
 {
 "text": "one?",
-"start": 42.348,
-"end": 42.584,
+"start": 47.21,
+"end": 47.479,
 "line": "14"
 }
 ]
