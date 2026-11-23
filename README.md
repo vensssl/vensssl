@@ -23,3 +23,15 @@ npm run render -- BlackoutPart2 out/blackout-part2.mp4
 ```
 
 Narration lines and voices: `part2/lines.tsv` (regenerate one with `npx hyperframes tts`). Scenes: `src/blackout/`.
+
+## Motivational shorts (Day One, The Wall, The Switch)
+
+Narrated 9:16 shorts in a dark-stage / spotlight / neon-icon style. Each has a script (`lines.tsv`) and a soundtrack builder:
+
+```bash
+pip install kokoro-onnx soundfile scipy numpy
+cd dayone && python3 build_audio.py      # also wall/, switch/ (narration via `npx hyperframes tts`)
+npx remotion render DayOne out/01-day-one.mp4      # TheWall, TheSwitch
+```
+
+Scenes: `src/dayone/` (shared drawing kit in `kit.tsx`), `src/shorts/`.

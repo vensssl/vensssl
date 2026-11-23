@@ -1,0 +1,554 @@
+[
+{
+"text": "Two",
+"start": 1.1,
+"end": 1.357,
+"line": "01"
+},
+{
+"text": "people",
+"start": 1.357,
+"end": 1.768,
+"line": "01"
+},
+{
+"text": "start",
+"start": 1.768,
+"end": 2.127,
+"line": "01"
+},
+{
+"text": "on",
+"start": 2.127,
+"end": 2.332,
+"line": "01"
+},
+{
+"text": "the",
+"start": 2.332,
+"end": 2.589,
+"line": "01"
+},
+{
+"text": "same",
+"start": 2.589,
+"end": 2.897,
+"line": "01"
+},
+{
+"text": "day.",
+"start": 2.897,
+"end": 3.154,
+"line": "01"
+},
+{
+"text": "Same",
+"start": 3.504,
+"end": 3.919,
+"line": "02"
+},
+{
+"text": "age.",
+"start": 3.919,
+"end": 4.265,
+"line": "02"
+},
+{
+"text": "Same",
+"start": 4.265,
+"end": 4.68,
+"line": "02"
+},
+{
+"text": "city.",
+"start": 4.68,
+"end": 5.096,
+"line": "02"
+},
+{
+"text": "Same",
+"start": 5.096,
+"end": 5.511,
+"line": "02"
+},
+{
+"text": "zero",
+"start": 5.511,
+"end": 5.926,
+"line": "02"
+},
+{
+"text": "dollars.",
+"start": 5.926,
+"end": 6.549,
+"line": "02"
+},
+{
+"text": "One",
+"start": 6.999,
+"end": 7.226,
+"line": "03"
+},
+{
+"text": "of",
+"start": 7.226,
+"end": 7.407,
+"line": "03"
+},
+{
+"text": "them",
+"start": 7.407,
+"end": 7.678,
+"line": "03"
+},
+{
+"text": "picks",
+"start": 7.678,
+"end": 7.995,
+"line": "03"
+},
+{
+"text": "up",
+"start": 7.995,
+"end": 8.176,
+"line": "03"
+},
+{
+"text": "a",
+"start": 8.176,
+"end": 8.312,
+"line": "03"
+},
+{
+"text": "phone.",
+"start": 8.312,
+"end": 8.629,
+"line": "03"
+},
+{
+"text": "The",
+"start": 8.879,
+"end": 9.105,
+"line": "04"
+},
+{
+"text": "other",
+"start": 9.105,
+"end": 9.421,
+"line": "04"
+},
+{
+"text": "one",
+"start": 9.421,
+"end": 9.647,
+"line": "04"
+},
+{
+"text": "picks",
+"start": 9.647,
+"end": 9.963,
+"line": "04"
+},
+{
+"text": "up",
+"start": 9.963,
+"end": 10.143,
+"line": "04"
+},
+{
+"text": "a",
+"start": 10.143,
+"end": 10.279,
+"line": "04"
+},
+{
+"text": "book.",
+"start": 10.279,
+"end": 10.55,
+"line": "04"
+},
+{
+"text": "On",
+"start": 11.05,
+"end": 11.271,
+"line": "05"
+},
+{
+"text": "day",
+"start": 11.271,
+"end": 11.548,
+"line": "05"
+},
+{
+"text": "one,",
+"start": 11.548,
+"end": 11.825,
+"line": "05"
+},
+{
+"text": "nobody",
+"start": 11.825,
+"end": 12.268,
+"line": "05"
+},
+{
+"text": "can",
+"start": 12.268,
+"end": 12.545,
+"line": "05"
+},
+{
+"text": "tell",
+"start": 12.545,
+"end": 12.878,
+"line": "05"
+},
+{
+"text": "the",
+"start": 12.878,
+"end": 13.155,
+"line": "05"
+},
+{
+"text": "difference.",
+"start": 13.155,
+"end": 13.819,
+"line": "05"
+},
+{
+"text": "Day",
+"start": 14.269,
+"end": 14.6,
+"line": "06"
+},
+{
+"text": "30.",
+"start": 14.6,
+"end": 14.864,
+"line": "06"
+},
+{
+"text": "Still",
+"start": 14.864,
+"end": 15.326,
+"line": "06"
+},
+{
+"text": "nothing.",
+"start": 15.326,
+"end": 15.921,
+"line": "06"
+},
+{
+"text": "Day",
+"start": 16.271,
+"end": 16.627,
+"line": "07"
+},
+{
+"text": "100.",
+"start": 16.627,
+"end": 16.982,
+"line": "07"
+},
+{
+"text": "They",
+"start": 16.982,
+"end": 17.409,
+"line": "07"
+},
+{
+"text": "look",
+"start": 17.409,
+"end": 17.836,
+"line": "07"
+},
+{
+"text": "exactly",
+"start": 17.836,
+"end": 18.477,
+"line": "07"
+},
+{
+"text": "the",
+"start": 18.477,
+"end": 18.833,
+"line": "07"
+},
+{
+"text": "same.",
+"start": 18.833,
+"end": 19.26,
+"line": "07"
+},
+{
+"text": "That's",
+"start": 19.76,
+"end": 20.185,
+"line": "08"
+},
+{
+"text": "the",
+"start": 20.185,
+"end": 20.489,
+"line": "08"
+},
+{
+"text": "trap.",
+"start": 20.489,
+"end": 20.853,
+"line": "08"
+},
+{
+"text": "1%",
+"start": 21.403,
+"end": 21.601,
+"line": "09"
+},
+{
+"text": "better",
+"start": 21.601,
+"end": 22.129,
+"line": "09"
+},
+{
+"text": "every",
+"start": 22.129,
+"end": 22.591,
+"line": "09"
+},
+{
+"text": "day",
+"start": 22.591,
+"end": 22.921,
+"line": "09"
+},
+{
+"text": "looks",
+"start": 22.921,
+"end": 23.383,
+"line": "09"
+},
+{
+"text": "like",
+"start": 23.383,
+"end": 23.779,
+"line": "09"
+},
+{
+"text": "nothing,",
+"start": 23.779,
+"end": 24.373,
+"line": "09"
+},
+{
+"text": "until",
+"start": 24.523,
+"end": 25.038,
+"line": "10"
+},
+{
+"text": "it",
+"start": 25.038,
+"end": 25.331,
+"line": "10"
+},
+{
+"text": "isn't.",
+"start": 25.331,
+"end": 25.772,
+"line": "10"
+},
+{
+"text": "1.01,",
+"start": 26.372,
+"end": 27.01,
+"line": "11"
+},
+{
+"text": "to",
+"start": 27.01,
+"end": 27.52,
+"line": "11"
+},
+{
+"text": "the",
+"start": 27.52,
+"end": 28.158,
+"line": "11"
+},
+{
+"text": "power",
+"start": 28.158,
+"end": 29.05,
+"line": "11"
+},
+{
+"text": "of",
+"start": 29.05,
+"end": 29.56,
+"line": "11"
+},
+{
+"text": "365,",
+"start": 29.56,
+"end": 30.198,
+"line": "11"
+},
+{
+"text": "is",
+"start": 30.198,
+"end": 30.708,
+"line": "11"
+},
+{
+"text": "37.",
+"start": 30.708,
+"end": 31.218,
+"line": "11"
+},
+{
+"text": "0.99,",
+"start": 31.668,
+"end": 32.227,
+"line": "12"
+},
+{
+"text": "to",
+"start": 32.227,
+"end": 32.674,
+"line": "12"
+},
+{
+"text": "the",
+"start": 32.674,
+"end": 33.233,
+"line": "12"
+},
+{
+"text": "power",
+"start": 33.233,
+"end": 34.016,
+"line": "12"
+},
+{
+"text": "of",
+"start": 34.016,
+"end": 34.463,
+"line": "12"
+},
+{
+"text": "365,",
+"start": 34.463,
+"end": 35.021,
+"line": "12"
+},
+{
+"text": "is",
+"start": 35.021,
+"end": 35.468,
+"line": "12"
+},
+{
+"text": "almost",
+"start": 35.468,
+"end": 36.363,
+"line": "12"
+},
+{
+"text": "zero.",
+"start": 36.363,
+"end": 37.033,
+"line": "12"
+},
+{
+"text": "Same",
+"start": 37.583,
+"end": 37.94,
+"line": "13"
+},
+{
+"text": "start.",
+"start": 37.94,
+"end": 38.357,
+"line": "13"
+},
+{
+"text": "Different",
+"start": 38.357,
+"end": 39.011,
+"line": "13"
+},
+{
+"text": "habits.",
+"start": 39.011,
+"end": 39.487,
+"line": "13"
+},
+{
+"text": "So",
+"start": 39.987,
+"end": 40.176,
+"line": "14"
+},
+{
+"text": "which",
+"start": 40.176,
+"end": 40.507,
+"line": "14"
+},
+{
+"text": "one",
+"start": 40.507,
+"end": 40.743,
+"line": "14"
+},
+{
+"text": "are",
+"start": 40.743,
+"end": 40.979,
+"line": "14"
+},
+{
+"text": "you",
+"start": 40.979,
+"end": 41.215,
+"line": "14"
+},
+{
+"text": "going",
+"start": 41.215,
+"end": 41.545,
+"line": "14"
+},
+{
+"text": "to",
+"start": 41.545,
+"end": 41.734,
+"line": "14"
+},
+{
+"text": "be,",
+"start": 41.734,
+"end": 41.923,
+"line": "14"
+},
+{
+"text": "on",
+"start": 41.923,
+"end": 42.112,
+"line": "14"
+},
+{
+"text": "day",
+"start": 42.112,
+"end": 42.348,
+"line": "14"
+},
+{
+"text": "one?",
+"start": 42.348,
+"end": 42.584,
+"line": "14"
+}
+]

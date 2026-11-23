@@ -1,0 +1,111 @@
+"""Shared helpers for the narrated motivational shorts (wall/, switch/).
+A video script calls Track(...), places sfx/music, then .write(out_dir, events)."""
+import json, os, re, numpy as np, soundfile as sf
+from scipy.signal import butter, sosfilt
+
+SR = 48000
+rng = np.random.default_rng(5)
+
+def lp(x, f, o=2): return sosfilt(butter(o, f, 'low', fs=SR, output='sos'), x)
+def hp(x, f, o=2): return sosfilt(butter(o, f, 'high', fs=SR, output='sos'), x)
+def bp(x, lo, hi): return sosfilt(butter(2, [lo, hi], 'band', fs=SR, output='sos'), x)
+def env(n, a=0.005, d=0.2):
+    t = np.arange(n)/SR; return np.minimum(1, t/a) * np.exp(-t/d)
+def hz(note):
+    names = {'C':-9,'C#':-8,'D':-7,'D#':-6,'E':-5,'F':-4,'F#':-3,'G':-2,'G#':-1,'A':0,'A#':1,'B':2}
+    return 440 * 2 ** ((names[note[:-1]] + 12*(int(note[-1])-4)) / 12)
+def noise(n): return rng.standard_normal(n)
+
+def load(p):
+    a, s = sf.read(p)
+    if a.ndim > 1: a = a.mean(1)
+    i = np.where(np.abs(a) > 0.01)[0]; a = a[max(0, i[0]-int(.03*s)): i[-1]+int(.1*s)]
+    n = int(len(a) * SR / s)
+    return np.interp(np.linspace(0, len(a)-1, n), np.arange(len(a)), a)
+
+# ---- instruments / effects ----
+def pad(notes, dur, att=1.5, rel=1.5, bright=900):
+    n = int(dur*SR); tt = np.arange(n)/SR; x = np.zeros(n)
+    for k, nt in enumerate(notes):
+        f = hz(nt)
+        for det in (-0.12, 0.0, 0.13):
+            x += np.sin(2*np.pi*f*(1+det/100)*tt + k) + .3*np.sin(2*np.pi*2*f*(1+det/100)*tt)
+    x = lp(x, bright)
+    return x * np.minimum(1, tt/att) * np.clip((dur-tt)/rel, 0, 1) / len(notes) / 3
+def pluck(f, d=.9, g=1):
+    n = int(d*SR); tt = np.arange(n)/SR
+    x = np.sin(2*np.pi*f*tt) + .45*np.sin(2*np.pi*2*f*tt)*np.exp(-tt*6) + .2*np.sin(2*np.pi*3*f*tt)*np.exp(-tt*10)
+    return x*env(n, .003, .35)*g
+def kick():
+    n = int(.4*SR); tt = np.arange(n)/SR
+    return np.sin(2*np.pi*(50+90*np.exp(-tt*30))*tt)*env(n, .002, .14)
+def hat():
+    n = int(.06*SR); return hp(noise(n), 7000)*env(n, .0005, .015)
+def clunk():
+    n = int(.5*SR); tt = np.arange(n)/SR
+    return lp(noise(n), 900)*env(n, .001, .03)*1.4 + np.sin(2*np.pi*70*tt)*env(n, .002, .12)*.8
+def pop(f=900):
+    n = int(.12*SR); tt = np.arange(n)/SR
+    return np.sin(2*np.pi*(f*(1+2*np.exp(-tt*60)))*tt)*env(n, .001, .03)
+def tick():
+    n = int(.03*SR); return hp(noise(n), 3000)*env(n, .0003, .004)
+def whoosh(d=.6, lo=500, hi=4000):
+    n = int(d*SR); return bp(noise(n), lo, hi)*np.sin(np.linspace(0, np.pi, n))**2
+def boom():
+    n = int(2.2*SR); tt = np.arange(n)/SR
+    return np.sin(2*np.pi*(45+60*np.exp(-tt*8))*tt)*env(n, .002, .7) + lp(noise(n), 400)*env(n, .001, .15)*.6
+def riser(d):
+    n = int(d*SR); tt = np.arange(n)/SR
+    return bp(noise(n), 2000, 8000) * (tt/tt[-1])**3
+def thud():
+    n = int(.5*SR); tt = np.arange(n)/SR
+    return np.sin(2*np.pi*(60+40*np.exp(-tt*20))*tt)*env(n, .002, .1) + lp(noise(n), 600)*env(n, .001, .03)*.7
+def step():
+    n = int(.12*SR); return lp(noise(n), 1500)*env(n, .002, .025)
+def rain(d):
+    n = int(d*SR); x = bp(noise(n), 1500, 9000) * 0.5
+    drops = np.zeros(n); idx = rng.integers(0, n, int(d*35)); drops[idx] = rng.uniform(.3, 1, len(idx))
+    return x + bp(drops, 2000, 6000)*4
+
+class Track:
+    def __init__(self, lines='lines.tsv', offset=1.0, tail=3.4):
+        rows = [l.rstrip('\n').split('\t') for l in open(lines) if l.strip()]
+        self.segs, clips, t = [], [], offset
+        for id_, voice, speed, pause, text in rows:
+            a = load(f'assets/vo/{id_}.wav')
+            self.segs.append(dict(id=id_, text=text, start=t, end=t+len(a)/SR)); clips.append((t, a))
+            t += len(a)/SR + float(pause)
+        self.seg = {s['id']: s for s in self.segs}
+        self.vo_end = self.segs[-1]['end']; self.end = self.vo_end + tail
+        self.N = int(self.end*SR)
+        self.vo, self.sfx, self.bed = np.zeros(self.N), np.zeros(self.N), np.zeros(self.N)
+        for st, a in clips: i = int(st*SR); self.vo[i:i+len(a)] += a
+    def S(self, k): return self.seg[k]['start']
+    def E(self, k): return self.seg[k]['end']
+    def put(self, buf, at, x, g=1.0):
+        i = int(at*SR)
+        if i >= self.N or i < 0: return
+        x = x[:self.N-i]; buf[i:i+len(x)] += x*g
+    def write(self, out_dir, events, replace=()):
+        tt = np.arange(self.N)/SR
+        self.bed *= np.clip((self.end - tt)/1.8, 0, 1)
+        vel = lp(np.abs(self.vo), 6); vel /= vel.max()+1e-9
+        self.bed *= 1 - 0.35*np.clip(vel*3, 0, 1)
+        mix = np.tanh((self.vo*1.05 + self.sfx + self.bed*0.9)*1.05)*0.89
+        os.makedirs(out_dir, exist_ok=True)
+        sf.write(f'{out_dir}/audio.wav', mix.astype(np.float32), SR)
+        words = []
+        for s in self.segs:
+            text = s['text']
+            for a, b in replace: text = text.replace(a, b)
+            toks = text.split()
+            w = np.array([len(re.sub(r'\W', '', x))+2 for x in toks], float); w /= w.sum()
+            cur, dur = s['start'], s['end']-s['start']
+            for tok, f in zip(toks, w):
+                words.append(dict(text=tok, start=round(cur, 3), end=round(cur+f*dur, 3), line=s['id'])); cur += f*dur
+        json.dump(words, open(f'{out_dir}/words.json', 'w'), indent=0)
+        ev = {k: ([round(x, 3) for x in v] if isinstance(v, (list, tuple)) else round(v, 3)) for k, v in events.items()}
+        json.dump(dict(lines={s['id']: [round(s['start'], 3), round(s['end'], 3)] for s in self.segs},
+                       events=ev, endCardStart=round(self.vo_end + 0.2, 3), duration=round(self.end, 3)),
+                  open(f'{out_dir}/timing.json', 'w'), indent=1)
+        print('duration', round(self.end, 2))

@@ -4,3 +4,4 @@ out/
 .tmp/
 public/*.mp4
 public/*.mov
+__pycache__/
