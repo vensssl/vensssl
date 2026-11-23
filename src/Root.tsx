@@ -1,4 +1,5 @@
-import { Composition, staticFile } from "remotion";
+import { Composition, Still, staticFile } from "remotion";
+import { Cover4 } from "./blackout/Cover4";
 import { ALL_FORMATS, Input, UrlSource } from "mediabunny";
 import { TikTok, TikTokProps } from "./TikTok";
 import { BlackoutPart2, BLACKOUT_P2_FRAMES } from "./blackout/BlackoutPart2";
@@ -24,6 +25,7 @@ export const RemotionRoot: React.FC = () => (
     fps={FPS}
     durationInFrames={BLACKOUT_P4_FRAMES}
   />
+  <Still id="Cover4" component={Cover4} width={1080} height={1920} />
   <Composition
     id="TikTok"
     component={TikTok}
