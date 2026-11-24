@@ -139,6 +139,9 @@ bed *= duck
 if os.environ.get("STYLE") == "ref":   # held-chord reference bed (see scripts/audiokit.py)
     import sys; sys.path.insert(0, '../scripts'); from audiokit import ref_bed
     bed = ref_bed(N, 'am', swell=ev['impact'], dip=(trap, S('09'))) * np.clip((end - tt)/1.8, 0, 1)
+if os.environ.get("STYLE") == "soft":
+    import sys; sys.path.insert(0, '../scripts'); from audiokit import soft_bed
+    bed = soft_bed(N, 'am', swell=ev['impact'], dip=(trap, S('09'))) * np.clip((end - tt)/1.8, 0, 1)
 # side-chain the bed under the voice
 vel = lp(np.abs(vo), 6); vel /= vel.max()+1e-9
 bed *= 1 - 0.35*np.clip(vel*3, 0, 1)

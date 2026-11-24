@@ -2,349 +2,349 @@
 {
 "text": "Motivation",
 "start": 1.0,
-"end": 1.631,
+"end": 1.817,
 "line": "01"
 },
 {
 "text": "is",
-"start": 1.631,
-"end": 1.841,
+"start": 1.817,
+"end": 2.09,
 "line": "01"
 },
 {
 "text": "a",
-"start": 1.841,
-"end": 1.999,
+"start": 2.09,
+"end": 2.294,
 "line": "01"
 },
 {
 "text": "battery.",
-"start": 1.999,
-"end": 2.472,
+"start": 2.294,
+"end": 2.907,
 "line": "01"
 },
 {
 "text": "On",
-"start": 2.732,
-"end": 2.927,
+"start": 3.307,
+"end": 3.577,
 "line": "02"
 },
 {
 "text": "Monday,",
-"start": 2.927,
-"end": 3.317,
+"start": 3.577,
+"end": 4.116,
 "line": "02"
 },
 {
 "text": "it's",
-"start": 3.317,
-"end": 3.561,
+"start": 4.116,
+"end": 4.453,
 "line": "02"
 },
 {
 "text": "full.",
-"start": 3.561,
-"end": 3.854,
+"start": 4.453,
+"end": 4.857,
 "line": "02"
 },
 {
 "text": "By",
-"start": 4.017,
-"end": 4.202,
+"start": 5.107,
+"end": 5.357,
 "line": "03"
 },
 {
 "text": "Wednesday,",
-"start": 4.202,
-"end": 4.713,
+"start": 5.357,
+"end": 6.045,
 "line": "03"
 },
 {
 "text": "it's",
-"start": 4.713,
-"end": 4.945,
+"start": 6.045,
+"end": 6.357,
 "line": "03"
 },
 {
 "text": "half.",
-"start": 4.945,
-"end": 5.224,
+"start": 6.357,
+"end": 6.732,
 "line": "03"
 },
 {
 "text": "By",
-"start": 5.386,
-"end": 5.581,
+"start": 6.982,
+"end": 7.25,
 "line": "04"
 },
 {
 "text": "Friday,",
-"start": 5.581,
-"end": 5.972,
+"start": 7.25,
+"end": 7.786,
 "line": "04"
 },
 {
 "text": "it's",
-"start": 5.972,
-"end": 6.215,
+"start": 7.786,
+"end": 8.121,
 "line": "04"
 },
 {
 "text": "dead.",
-"start": 6.215,
-"end": 6.508,
+"start": 8.121,
+"end": 8.524,
 "line": "04"
 },
 {
 "text": "And",
-"start": 6.833,
-"end": 7.044,
+"start": 9.024,
+"end": 9.278,
 "line": "05"
 },
 {
 "text": "that's",
-"start": 7.044,
-"end": 7.339,
+"start": 9.278,
+"end": 9.635,
 "line": "05"
 },
 {
 "text": "the",
-"start": 7.339,
-"end": 7.55,
+"start": 9.635,
+"end": 9.89,
 "line": "05"
 },
 {
 "text": "day",
-"start": 7.55,
-"end": 7.761,
+"start": 9.89,
+"end": 10.144,
 "line": "05"
 },
 {
 "text": "most",
-"start": 7.761,
-"end": 8.014,
+"start": 10.144,
+"end": 10.45,
 "line": "05"
 },
 {
 "text": "people",
-"start": 8.014,
-"end": 8.351,
+"start": 10.45,
+"end": 10.857,
 "line": "05"
 },
 {
 "text": "quit.",
-"start": 8.351,
-"end": 8.604,
+"start": 10.857,
+"end": 11.163,
 "line": "05"
 },
 {
 "text": "Discipline",
-"start": 8.994,
-"end": 9.613,
+"start": 11.763,
+"end": 12.513,
 "line": "06"
 },
 {
 "text": "isn't",
-"start": 9.613,
-"end": 9.923,
+"start": 12.513,
+"end": 12.887,
 "line": "06"
 },
 {
 "text": "a",
-"start": 9.923,
-"end": 10.078,
+"start": 12.887,
+"end": 13.075,
 "line": "06"
 },
 {
 "text": "battery.",
-"start": 10.078,
-"end": 10.543,
+"start": 13.075,
+"end": 13.637,
 "line": "06"
 },
 {
 "text": "It's",
-"start": 10.738,
-"end": 10.982,
+"start": 13.937,
+"end": 14.295,
 "line": "07"
 },
 {
 "text": "a",
-"start": 10.982,
-"end": 11.129,
+"start": 14.295,
+"end": 14.51,
 "line": "07"
 },
 {
 "text": "switch.",
-"start": 11.129,
-"end": 11.519,
+"start": 14.51,
+"end": 15.083,
 "line": "07"
 },
 {
 "text": "You",
-"start": 11.877,
-"end": 12.072,
+"start": 15.633,
+"end": 15.883,
 "line": "08"
 },
 {
 "text": "don't",
-"start": 12.072,
-"end": 12.306,
+"start": 15.883,
+"end": 16.184,
 "line": "08"
 },
 {
 "text": "wait",
-"start": 12.306,
-"end": 12.54,
+"start": 16.184,
+"end": 16.484,
 "line": "08"
 },
 {
 "text": "until",
-"start": 12.54,
-"end": 12.813,
+"start": 16.484,
+"end": 16.834,
 "line": "08"
 },
 {
 "text": "you",
-"start": 12.813,
-"end": 13.008,
+"start": 16.834,
+"end": 17.084,
 "line": "08"
 },
 {
 "text": "feel",
-"start": 13.008,
-"end": 13.242,
+"start": 17.084,
+"end": 17.384,
 "line": "08"
 },
 {
 "text": "like",
-"start": 13.242,
-"end": 13.476,
+"start": 17.384,
+"end": 17.684,
 "line": "08"
 },
 {
 "text": "it.",
-"start": 13.476,
-"end": 13.632,
+"start": 17.684,
+"end": 17.884,
 "line": "08"
 },
 {
 "text": "You",
-"start": 13.86,
-"end": 14.101,
+"start": 18.234,
+"end": 18.53,
 "line": "09"
 },
 {
 "text": "flip",
-"start": 14.101,
-"end": 14.39,
+"start": 18.53,
+"end": 18.885,
 "line": "09"
 },
 {
 "text": "it.",
-"start": 14.39,
-"end": 14.582,
+"start": 18.885,
+"end": 19.121,
 "line": "09"
 },
 {
 "text": "Every",
-"start": 14.582,
-"end": 14.919,
+"start": 19.121,
+"end": 19.535,
 "line": "09"
 },
 {
 "text": "single",
-"start": 14.919,
-"end": 15.305,
+"start": 19.535,
+"end": 20.008,
 "line": "09"
 },
 {
 "text": "day.",
-"start": 15.305,
-"end": 15.545,
+"start": 20.008,
+"end": 20.304,
 "line": "09"
 },
 {
 "text": "Tired",
-"start": 15.805,
-"end": 16.196,
+"start": 20.704,
+"end": 21.218,
 "line": "10"
 },
 {
 "text": "or",
-"start": 16.196,
-"end": 16.419,
+"start": 21.218,
+"end": 21.511,
 "line": "10"
 },
 {
 "text": "not.",
-"start": 16.419,
-"end": 16.698,
+"start": 21.511,
+"end": 21.878,
 "line": "10"
 },
 {
 "text": "Rain",
-"start": 16.698,
-"end": 17.032,
+"start": 21.878,
+"end": 22.319,
 "line": "10"
 },
 {
 "text": "or",
-"start": 17.032,
-"end": 17.256,
+"start": 22.319,
+"end": 22.613,
 "line": "10"
 },
 {
 "text": "shine.",
-"start": 17.256,
-"end": 17.646,
+"start": 22.613,
+"end": 23.127,
 "line": "10"
 },
 {
 "text": "Motivation",
-"start": 17.971,
-"end": 18.571,
+"start": 23.627,
+"end": 24.399,
 "line": "11"
 },
 {
 "text": "gets",
-"start": 18.571,
-"end": 18.871,
+"start": 24.399,
+"end": 24.785,
 "line": "11"
 },
 {
 "text": "you",
-"start": 18.871,
-"end": 19.121,
+"start": 24.785,
+"end": 25.107,
 "line": "11"
 },
 {
 "text": "started.",
-"start": 19.121,
-"end": 19.571,
+"start": 25.107,
+"end": 25.686,
 "line": "11"
 },
 {
 "text": "Discipline",
-"start": 19.734,
-"end": 20.271,
+"start": 25.936,
+"end": 26.57,
 "line": "12"
 },
 {
 "text": "gets",
-"start": 20.271,
-"end": 20.54,
+"start": 26.57,
+"end": 26.887,
 "line": "12"
 },
 {
 "text": "you",
-"start": 20.54,
-"end": 20.764,
+"start": 26.887,
+"end": 27.152,
 "line": "12"
 },
 {
 "text": "there.",
-"start": 20.764,
-"end": 21.078,
+"start": 27.152,
+"end": 27.521,
 "line": "12"
 }
 ]

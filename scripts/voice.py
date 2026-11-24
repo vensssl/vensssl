@@ -15,6 +15,10 @@ PRESETS = {
     # matched to the reference TikTok narrator: very deep (~90 Hz), dry, close-mic, quick, squashed
     "ref":     dict(blend=[("am_michael", .45), ("am_fenrir", .35), ("am_onyx", .2)], speed=1.18, pitch=-1.5, fshift=-2.2, warmth=5.0, echo=False, tight=True, lang="en-us"),
     "ref-uk":  dict(blend=[("bm_george", .75), ("bm_fable", .25)], speed=1.0, pitch=-2.0, fshift=-2.6, warmth=5.0, echo=False, tight=True, lang="en-gb"),
+    # natural: no pitch shifting at all, single voice, light polish only
+    "natural":    dict(blend=[("am_michael", 1.0)], speed=0.95, pitch=0, warmth=2.0, echo=False, lang="en-us"),
+    "natural-uk": dict(blend=[("bm_george", 1.0)], speed=0.95, pitch=0, warmth=2.0, echo=False, lang="en-gb"),
+    "natural-f":  dict(blend=[("af_heart", 1.0)], speed=0.95, pitch=0, warmth=1.0, echo=False, lang="en-us"),
     "female":  dict(blend=[("af_heart", .7), ("af_bella", .3)], speed=.92, pitch=-0.6, warmth=2.0, lang="en-us"),
 }
 
@@ -28,8 +32,8 @@ def chain(p):
     """ffmpeg filter: pitch down (formants kept), clean low end, warm body, cut mud, presence, de-ess,
     two-stage compression, a small dark room, and a limiter."""
     f = [f"rubberband=pitch={2 ** (p['fshift'] / 12):.4f}:formant=shifted:transients=smooth"] if p.get("fshift") else []
+    if p.get("pitch"): f.append(f"rubberband=pitch={2 ** (p['pitch'] / 12):.4f}:formant=preserved:transients=smooth")
     return ",".join(f + [
-        f"rubberband=pitch={2 ** (p['pitch'] / 12):.4f}:formant=preserved:transients=smooth",
         "highpass=f=65",
         f"equalizer=f=120:t=q:w=0.9:g={p['warmth']}",
         "equalizer=f=320:t=q:w=1.2:g=-3",

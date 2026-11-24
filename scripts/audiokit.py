@@ -92,6 +92,8 @@ class Track:
         duck = 0.35
         if ref is not None and os.environ.get("STYLE") == "ref":
             self.bed = ref_bed(self.N, **ref); duck = 0.2
+        if ref is not None and os.environ.get("STYLE") == "soft":
+            self.bed = soft_bed(self.N, **ref); duck = 0.3
         self.bed *= np.clip((self.end - tt)/1.8, 0, 1)
         vel = lp(np.abs(self.vo), 6); vel /= vel.max()+1e-9
         self.bed *= 1 - duck*np.clip(vel*3, 0, 1)
@@ -151,3 +153,37 @@ def ref_bed(N, prog="am", chord_len=5.2, swell=None, dip=None):
         a, b = dip; d = np.clip(np.minimum((tt-a)/.3, (b-tt)/.6), 0, 1); bed *= 1 - 0.55*d
     bed /= np.abs(bed).max() + 1e-9
     return bed * 0.32
+
+# ---- soft bed: felt-piano broken chords + a quiet warm pad. Nothing buzzy, sits well under the voice ----
+SOFT_PROG = {
+    "am": [['A2','E3','A3','C4','E4'], ['F2','C3','F3','A3','C4'], ['C3','G3','C4','E4','G4'], ['G2','D3','G3','B3','D4']],
+    "dm": [['D3','A3','D4','F4','A4'], ['A#2','F3','A#3','D4','F4'], ['F2','C3','F3','A3','C4'], ['C3','G3','C4','E4','G4']],
+}
+def felt(f, d=2.6, g=1.0):
+    n = int(d*SR); tt = np.arange(n)/SR
+    x = np.sin(2*np.pi*f*tt) + .25*np.sin(2*np.pi*2*f*tt)*np.exp(-tt*3) + .08*np.sin(2*np.pi*3*f*tt)*np.exp(-tt*5)
+    x *= np.minimum(1, tt/0.012) * np.exp(-tt*1.4)
+    return lp(x, 1800) * g
+def soft_bed(N, prog="am", bpm=72, swell=None, dip=None):
+    chords = SOFT_PROG[prog]; beat = 60/bpm; bar = 4*beat
+    tt = np.arange(N)/SR; bed = np.zeros(N); t = 0.0; k = 0
+    def put(at, x):
+        i = int(at*SR)
+        if i < N: m = min(len(x), N-i); bed[i:i+m] += x[:m]
+    order = [0, 2, 3, 4, 3, 2, 1, 2]
+    while t < N/SR:
+        c = chords[k % len(chords)]
+        late = swell is not None and t >= swell - 0.1
+        put(t, felt(hz(c[0]), 4.0, .9))
+        for b, idx in enumerate(order):
+            if late or b % 2 == 0:  # sparse before the climax, flowing after it
+                put(t + b*beat/2, felt(hz(c[idx]), 2.4, .42 + (.1 if b == 0 else 0)))
+        # warm pad: pure sines, very low, slow fade
+        n = int((bar + 1.5)*SR); lt = np.arange(n)/SR
+        pad = sum(np.sin(2*np.pi*hz(nt)*lt) for nt in c[1:4]) / 3
+        put(t, lp(pad, 700) * np.minimum(1, lt/1.2) * np.clip((bar+1.5-lt)/1.5, 0, 1) * (0.28 if late else 0.18))
+        t += bar; k += 1
+    if dip is not None:
+        a, b = dip; d = np.clip(np.minimum((tt-a)/.3, (b-tt)/.6), 0, 1); bed *= 1 - 0.7*d
+    bed /= np.abs(bed).max() + 1e-9
+    return bed * 0.2
