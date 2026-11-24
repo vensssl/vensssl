@@ -26,7 +26,7 @@ segs, clips, t = [], [], OFFSET
 for id_, voice, speed, pause, text in rows:
     a = load(f'assets/vo/{id_}.wav')
     segs.append(dict(id=id_, text=text, start=t, end=t+len(a)/SR)); clips.append((t, a))
-    t += len(a)/SR + float(pause)
+    t += len(a)/SR + float(pause)*float(os.environ.get('PAUSE_SCALE', 1))
 seg = {s['id']: s for s in segs}
 vo_end = segs[-1]['end']
 end = vo_end + ENDCARD
@@ -136,6 +136,9 @@ s12, e12 = S('12'), E('12') + .3
 duck *= 1 - 0.45*np.clip(np.minimum((tt-s12)/.4, (e12-tt)/.6), 0, 1)
 duck *= np.clip((end - tt)/1.8, 0, 1)
 bed *= duck
+if os.environ.get("STYLE") == "ref":   # held-chord reference bed (see scripts/audiokit.py)
+    import sys; sys.path.insert(0, '../scripts'); from audiokit import ref_bed
+    bed = ref_bed(N, 'am', swell=ev['impact'], dip=(trap, S('09'))) * np.clip((end - tt)/1.8, 0, 1)
 # side-chain the bed under the voice
 vel = lp(np.abs(vo), 6); vel /= vel.max()+1e-9
 bed *= 1 - 0.35*np.clip(vel*3, 0, 1)

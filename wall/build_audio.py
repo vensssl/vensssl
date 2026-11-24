@@ -40,4 +40,4 @@ while t < tr.end-0.4:
     c = prog[k % 4]; put(tr.bed, t, pad(c, bar+1.2, att=.2, bright=1600), .55)
     for b in range(8): put(tr.bed, t+b*bar/8, pluck(hz(c[(b*2) % 3])*2, .5, .2))
     t += bar; k += 1
-tr.write('../public/wall', ev, replace=[('nobody is', "nobody's")])
+tr.write('../public/wall', ev, replace=[('nobody is', "nobody's")], ref=dict(prog='dm', swell=ev['top'], dip=(S('07'), S('08'))))

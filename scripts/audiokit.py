@@ -74,7 +74,7 @@ class Track:
         for id_, voice, speed, pause, text in rows:
             a = load(f'assets/vo/{id_}.wav')
             self.segs.append(dict(id=id_, text=text, start=t, end=t+len(a)/SR)); clips.append((t, a))
-            t += len(a)/SR + float(pause)
+            t += len(a)/SR + float(pause)*float(os.environ.get('PAUSE_SCALE', 1))
         self.seg = {s['id']: s for s in self.segs}
         self.vo_end = self.segs[-1]['end']; self.end = self.vo_end + tail
         self.N = int(self.end*SR)
@@ -86,11 +86,15 @@ class Track:
         i = int(at*SR)
         if i >= self.N or i < 0: return
         x = x[:self.N-i]; buf[i:i+len(x)] += x*g
-    def write(self, out_dir, events, replace=()):
+    def write(self, out_dir, events, replace=(), ref=None):
+        """ref: dict(prog=, swell=, dip=) -> replace the music with the held-chord reference bed (STYLE=ref)."""
         tt = np.arange(self.N)/SR
+        duck = 0.35
+        if ref is not None and os.environ.get("STYLE") == "ref":
+            self.bed = ref_bed(self.N, **ref); duck = 0.2
         self.bed *= np.clip((self.end - tt)/1.8, 0, 1)
         vel = lp(np.abs(self.vo), 6); vel /= vel.max()+1e-9
-        self.bed *= 1 - 0.35*np.clip(vel*3, 0, 1)
+        self.bed *= 1 - duck*np.clip(vel*3, 0, 1)
         mix = np.tanh((self.vo*1.05 + self.sfx + self.bed*0.9)*1.05)*0.89
         os.makedirs(out_dir, exist_ok=True)
         sf.write(f'{out_dir}/audio.wav', mix.astype(np.float32), SR)
@@ -109,3 +113,41 @@ class Track:
                        events=ev, endCardStart=round(self.vo_end + 0.2, 3), duration=round(self.end, 3)),
                   open(f'{out_dir}/timing.json', 'w'), indent=1)
         print('duration', round(self.end, 2))
+
+# ---- "reference" bed: one held, emotional chord bed over a sub hum; no drums, never drops out ----
+REF_PROG = {
+    "am": [['A1','A2','E3','C4','G4','B4'], ['F1','F2','C3','A3','E4','G4'], ['C2','C3','G3','E4','B4','D5'], ['G1','G2','D3','B3','E4','A4']],
+    "dm": [['D2','D3','A3','F4','C5','E5'], ['A#1','A#2','F3','D4','A4','C5'], ['F1','F2','C3','A3','E4','G4'], ['C2','C3','G3','E4','A4','D5']],
+}
+def _saw(f, n, det):
+    tt = np.arange(n)/SR; x = np.zeros(n)
+    for d in det:
+        ph = (f*(1+d/100)*tt + rng.random()) % 1.0; x += 2*ph - 1
+    return x/len(det)
+def ref_bed(N, prog="am", chord_len=5.2, swell=None, dip=None):
+    """N samples. swell: time the bed opens up (climax). dip: (t0, t1) to thin it out briefly."""
+    chords = REF_PROG[prog]; tt = np.arange(N)/SR; bed = np.zeros(N); xf = 1.6
+    t, k = 0.0, 0
+    while t < N/SR:
+        dur = chord_len + xf; n = min(int(dur*SR), N - int(t*SR))
+        if n <= 0: break
+        lt = np.arange(n)/SR; e = np.minimum(1, lt/xf) * np.clip((dur-lt)/xf, 0, 1)
+        if t == 0: e = np.minimum(1, lt/0.25) * np.clip((dur-lt)/xf, 0, 1)
+        x = np.zeros(n)
+        for nt in chords[k % len(chords)]:
+            f = hz(nt)
+            if f < 90: x += 1.3*np.tanh(1.5*np.sin(2*np.pi*f*lt))           # sub hum, slightly driven
+            else: x += 0.55*_saw(f, n, (-0.15, 0.0, 0.17)) + 0.35*np.sin(2*np.pi*f*lt)
+        x = lp(x, 2600) + 0.12*hp(x, 2600)
+        i = int(t*SR); bed[i:i+n] += x*e
+        t += chord_len; k += 1
+    # slow breathing swells, like a held string section
+    bed *= 0.85 + 0.15*np.sin(2*np.pi*tt/7.3)
+    if swell is not None:
+        up = np.clip((tt - swell + 0.4)/0.6, 0, 1)
+        bright = hp(bed, 900)
+        bed = bed*(1 + 0.45*up) + bright*0.6*up
+    if dip is not None:
+        a, b = dip; d = np.clip(np.minimum((tt-a)/.3, (b-tt)/.6), 0, 1); bed *= 1 - 0.55*d
+    bed /= np.abs(bed).max() + 1e-9
+    return bed * 0.32

@@ -36,4 +36,4 @@ while t < tr.end-0.4:
     if t < tr.vo_end - 0.5:
         for b in range(4): put(tr.bed, t+b*beat, kick(), .3)
     t += bar; k += 1
-tr.write('../public/switch', ev, replace=[("it's", "it's")])
+tr.write('../public/switch', ev, ref=dict(prog='am', swell=ev['flip'], dip=(S('05') + 1.0, ev['flip'])))

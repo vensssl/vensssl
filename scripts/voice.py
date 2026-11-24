@@ -12,6 +12,9 @@ PRESETS = {
     "deep":    dict(blend=[("am_michael", .6), ("am_fenrir", .4)], speed=.9, pitch=-1.6, warmth=4.0, lang="en-us"),
     "british": dict(blend=[("bm_george", .75), ("bm_fable", .25)], speed=.9, pitch=-1.2, warmth=3.5, lang="en-gb"),
     "smooth":  dict(blend=[("am_michael", .5), ("am_puck", .2), ("am_onyx", .3)], speed=.9, pitch=-0.8, warmth=3.0, lang="en-us"),
+    # matched to the reference TikTok narrator: very deep (~90 Hz), dry, close-mic, quick, squashed
+    "ref":     dict(blend=[("am_michael", .45), ("am_fenrir", .35), ("am_onyx", .2)], speed=1.18, pitch=-1.5, fshift=-2.2, warmth=5.0, echo=False, tight=True, lang="en-us"),
+    "ref-uk":  dict(blend=[("bm_george", .75), ("bm_fable", .25)], speed=1.0, pitch=-2.0, fshift=-2.6, warmth=5.0, echo=False, tight=True, lang="en-gb"),
     "female":  dict(blend=[("af_heart", .7), ("af_bella", .3)], speed=.92, pitch=-0.6, warmth=2.0, lang="en-us"),
 }
 
@@ -24,7 +27,8 @@ def kokoro():
 def chain(p):
     """ffmpeg filter: pitch down (formants kept), clean low end, warm body, cut mud, presence, de-ess,
     two-stage compression, a small dark room, and a limiter."""
-    return ",".join([
+    f = [f"rubberband=pitch={2 ** (p['fshift'] / 12):.4f}:formant=shifted:transients=smooth"] if p.get("fshift") else []
+    return ",".join(f + [
         f"rubberband=pitch={2 ** (p['pitch'] / 12):.4f}:formant=preserved:transients=smooth",
         "highpass=f=65",
         f"equalizer=f=120:t=q:w=0.9:g={p['warmth']}",
@@ -34,7 +38,8 @@ def chain(p):
         "deesser=i=0.35:f=0.55",
         "acompressor=threshold=-22dB:ratio=3:attack=8:release=120:makeup=4",
         "acompressor=threshold=-10dB:ratio=6:attack=2:release=60",
-        "aecho=0.85:0.5:38|61:0.11|0.07",
+    ] + (["acompressor=threshold=-18dB:ratio=4:attack=1:release=40:makeup=3"] if p.get("tight") else [])
+      + (["aecho=0.85:0.5:38|61:0.11|0.07"] if p.get("echo", True) else []) + [
         "volume=7.5dB",
         "alimiter=limit=0.89",
     ])
