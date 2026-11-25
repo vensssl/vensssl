@@ -247,7 +247,7 @@ export const SceneDescend: React.FC<P> = ({ t }) => {
 };
 
 /* A small person silhouette standing in the tunnel */
-const Figure: React.FC<{ x: number; y: number; s: number; kind: "kid" | "old" | "nurse" | "man" | "woman"; o: number }> = ({ x, y, s, kind, o }) => {
+export const Figure: React.FC<{ x: number; y: number; s: number; kind: "kid" | "old" | "nurse" | "man" | "woman"; o: number }> = ({ x, y, s, kind, o }) => {
   const h = kind === "kid" ? 0.62 : 1;
   const body = kind === "nurse" ? "#2d5a5c" : "#06070b";
   return (
@@ -263,7 +263,7 @@ const Figure: React.FC<{ x: number; y: number; s: number; kind: "kid" | "old" | 
 };
 
 /* Arched brick tunnel with candles */
-const Tunnel: React.FC<{ t: number; people: number; cam: number }> = ({ t, people, cam }) => {
+export const Tunnel: React.FC<{ t: number; people: number; cam: number }> = ({ t, people, cam }) => {
   const rings = Array.from({ length: 9 }, (_, i) => i / 9);
   const cand = [0.1, 0.25, 0.42, 0.6, 0.78];
   return (

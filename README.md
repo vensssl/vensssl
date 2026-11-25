@@ -34,3 +34,17 @@ npm run render -- BlackoutPart4 out/blackout-part4.mp4
 ```
 
 Narration lines and voices: `part4/lines.tsv`. Scenes: `src/blackout/scenes4.tsx`.
+
+## BLACKOUT Part 5
+
+```bash
+cd part5 && python3 build_audio.py   # narration lines -> soundtrack + word timings
+```
+```bash
+npm run render -- BlackoutPart5 out/blackout-part5.mp4
+```
+```bash
+npx remotion still Cover5 out/blackout-part5-cover.png
+```
+
+Narration lines and voices: `part5/lines.tsv`. Scenes: `src/blackout/scenes5.tsx`. Post texts: `part5/post/`.
