@@ -2,349 +2,349 @@
 {
 "text": "Everyone",
 "start": 1.0,
-"end": 1.606,
+"end": 1.507,
 "line": "01"
 },
 {
 "text": "wants",
-"start": 1.606,
-"end": 2.03,
+"start": 1.507,
+"end": 1.861,
 "line": "01"
 },
 {
 "text": "the",
-"start": 2.03,
-"end": 2.334,
+"start": 1.861,
+"end": 2.115,
 "line": "01"
 },
 {
 "text": "result.",
-"start": 2.334,
-"end": 2.819,
+"start": 2.115,
+"end": 2.52,
 "line": "01"
 },
 {
 "text": "Nobody",
-"start": 3.169,
-"end": 3.602,
+"start": 2.87,
+"end": 3.221,
 "line": "02"
 },
 {
 "text": "wants",
-"start": 3.602,
-"end": 3.981,
+"start": 3.221,
+"end": 3.528,
 "line": "02"
 },
 {
 "text": "the",
-"start": 3.981,
-"end": 4.252,
+"start": 3.528,
+"end": 3.747,
 "line": "02"
 },
 {
 "text": "part",
-"start": 4.252,
-"end": 4.577,
+"start": 3.747,
+"end": 4.011,
 "line": "02"
 },
 {
 "text": "right",
-"start": 4.577,
-"end": 4.957,
+"start": 4.011,
+"end": 4.318,
 "line": "02"
 },
 {
 "text": "before",
-"start": 4.957,
-"end": 5.39,
+"start": 4.318,
+"end": 4.669,
 "line": "02"
 },
 {
 "text": "it.",
-"start": 5.39,
-"end": 5.607,
+"start": 4.669,
+"end": 4.844,
 "line": "02"
 },
 {
 "text": "The",
-"start": 6.157,
-"end": 6.466,
+"start": 5.394,
+"end": 5.639,
 "line": "03"
 },
 {
 "text": "early",
-"start": 6.466,
-"end": 6.898,
+"start": 5.639,
+"end": 5.98,
 "line": "03"
 },
 {
 "text": "mornings.",
-"start": 6.898,
-"end": 7.515,
+"start": 5.98,
+"end": 6.469,
 "line": "03"
 },
 {
 "text": "The",
-"start": 7.765,
-"end": 8.085,
+"start": 6.719,
+"end": 6.99,
 "line": "04"
 },
 {
 "text": "boring",
-"start": 8.085,
-"end": 8.595,
+"start": 6.99,
+"end": 7.424,
 "line": "04"
 },
 {
 "text": "reps.",
-"start": 8.595,
-"end": 8.978,
+"start": 7.424,
+"end": 7.75,
 "line": "04"
 },
 {
 "text": "The",
-"start": 9.228,
-"end": 9.542,
+"start": 8.0,
+"end": 8.266,
 "line": "05"
 },
 {
 "text": "days",
-"start": 9.542,
-"end": 9.919,
+"start": 8.266,
+"end": 8.585,
 "line": "05"
 },
 {
 "text": "when",
-"start": 9.919,
-"end": 10.296,
+"start": 8.585,
+"end": 8.904,
 "line": "05"
 },
 {
 "text": "nobody's",
-"start": 10.296,
-"end": 10.861,
+"start": 8.904,
+"end": 9.383,
 "line": "05"
 },
 {
 "text": "watching.",
-"start": 10.861,
-"end": 11.49,
+"start": 9.383,
+"end": 9.914,
 "line": "05"
 },
 {
 "text": "So",
-"start": 12.04,
-"end": 12.27,
+"start": 10.464,
+"end": 10.657,
 "line": "06"
 },
 {
 "text": "one",
-"start": 12.27,
-"end": 12.559,
+"start": 10.657,
+"end": 10.897,
 "line": "06"
 },
 {
 "text": "by",
-"start": 12.559,
-"end": 12.789,
+"start": 10.897,
+"end": 11.089,
 "line": "06"
 },
 {
 "text": "one,",
-"start": 12.789,
-"end": 13.078,
+"start": 11.089,
+"end": 11.33,
 "line": "06"
 },
 {
 "text": "they",
-"start": 13.078,
-"end": 13.424,
+"start": 11.33,
+"end": 11.618,
 "line": "06"
 },
 {
 "text": "turn",
-"start": 13.424,
-"end": 13.77,
+"start": 11.618,
+"end": 11.907,
 "line": "06"
 },
 {
 "text": "around.",
-"start": 13.77,
-"end": 14.231,
+"start": 11.907,
+"end": 12.291,
 "line": "06"
 },
 {
 "text": "But",
-"start": 14.831,
-"end": 15.065,
+"start": 12.891,
+"end": 13.083,
 "line": "07"
 },
 {
 "text": "here's",
-"start": 15.065,
-"end": 15.392,
+"start": 13.083,
+"end": 13.353,
 "line": "07"
 },
 {
 "text": "the",
-"start": 15.392,
-"end": 15.626,
+"start": 13.353,
+"end": 13.545,
 "line": "07"
 },
 {
 "text": "thing",
-"start": 15.626,
-"end": 15.954,
+"start": 13.545,
+"end": 13.814,
 "line": "07"
 },
 {
 "text": "about",
-"start": 15.954,
-"end": 16.281,
+"start": 13.814,
+"end": 14.084,
 "line": "07"
 },
 {
 "text": "the",
-"start": 16.281,
-"end": 16.515,
+"start": 14.084,
+"end": 14.276,
 "line": "07"
 },
 {
 "text": "wall.",
-"start": 16.515,
-"end": 16.796,
+"start": 14.276,
+"end": 14.507,
 "line": "07"
 },
 {
 "text": "It's",
-"start": 17.296,
-"end": 17.556,
+"start": 15.007,
+"end": 15.226,
 "line": "08"
 },
 {
 "text": "not",
-"start": 17.556,
-"end": 17.817,
+"start": 15.226,
+"end": 15.444,
 "line": "08"
 },
 {
 "text": "there",
-"start": 17.817,
-"end": 18.181,
+"start": 15.444,
+"end": 15.75,
 "line": "08"
 },
 {
 "text": "to",
-"start": 18.181,
-"end": 18.389,
+"start": 15.75,
+"end": 15.925,
 "line": "08"
 },
 {
 "text": "stop",
-"start": 18.389,
-"end": 18.702,
+"start": 15.925,
+"end": 16.188,
 "line": "08"
 },
 {
 "text": "you.",
-"start": 18.702,
-"end": 18.962,
+"start": 16.188,
+"end": 16.406,
 "line": "08"
 },
 {
 "text": "It's",
-"start": 19.312,
-"end": 19.569,
+"start": 16.756,
+"end": 16.965,
 "line": "09"
 },
 {
 "text": "there",
-"start": 19.569,
-"end": 19.928,
+"start": 16.965,
+"end": 17.258,
 "line": "09"
 },
 {
 "text": "to",
-"start": 19.928,
-"end": 20.134,
+"start": 17.258,
+"end": 17.425,
 "line": "09"
 },
 {
 "text": "stop",
-"start": 20.134,
-"end": 20.441,
+"start": 17.425,
+"end": 17.676,
 "line": "09"
 },
 {
 "text": "everyone",
-"start": 20.441,
-"end": 20.955,
+"start": 17.676,
+"end": 18.094,
 "line": "09"
 },
 {
 "text": "who",
-"start": 20.955,
-"end": 21.211,
+"start": 18.094,
+"end": 18.303,
 "line": "09"
 },
 {
 "text": "wants",
-"start": 21.211,
-"end": 21.571,
+"start": 18.303,
+"end": 18.596,
 "line": "09"
 },
 {
 "text": "it",
-"start": 21.571,
-"end": 21.776,
+"start": 18.596,
+"end": 18.763,
 "line": "09"
 },
 {
 "text": "less",
-"start": 21.776,
-"end": 22.084,
+"start": 18.763,
+"end": 19.014,
 "line": "09"
 },
 {
 "text": "than",
-"start": 22.084,
-"end": 22.392,
+"start": 19.014,
+"end": 19.265,
 "line": "09"
 },
 {
 "text": "you",
-"start": 22.392,
-"end": 22.648,
+"start": 19.265,
+"end": 19.474,
 "line": "09"
 },
 {
 "text": "do.",
-"start": 22.648,
-"end": 22.854,
+"start": 19.474,
+"end": 19.641,
 "line": "09"
 },
 {
 "text": "So",
-"start": 23.454,
-"end": 23.848,
+"start": 20.241,
+"end": 20.556,
 "line": "10"
 },
 {
 "text": "stay.",
-"start": 23.848,
-"end": 24.439,
+"start": 20.556,
+"end": 21.027,
 "line": "10"
 },
 {
 "text": "And",
-"start": 24.739,
-"end": 25.17,
+"start": 21.327,
+"end": 21.649,
 "line": "11"
 },
 {
 "text": "climb.",
-"start": 25.17,
-"end": 25.773,
+"start": 21.649,
+"end": 22.1,
 "line": "11"
 }
 ]

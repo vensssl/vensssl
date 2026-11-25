@@ -33,6 +33,8 @@ end = vo_end + ENDCARD
 N = int(end*SR)
 vo, sfx, bed = np.zeros(N), np.zeros(N), np.zeros(N)
 for st, a in clips: i = int(st*SR); vo[i:i+len(a)] += a
+import sys; sys.path.insert(0, '../scripts'); from audiokit import add_breaths
+add_breaths(vo, clips)
 
 def put(buf, at, x, g=1.0):
     i = int(at*SR)

@@ -31,7 +31,7 @@ Narrated 9:16 shorts in a dark-stage / spotlight / neon-icon style. Each has a s
 ```bash
 pip install kokoro-onnx soundfile scipy numpy
 export STYLE=soft PAUSE_SCALE=1                 # soft piano bed (STYLE=ref: held-chord drone, PAUSE_SCALE=0.65)
-cd dayone && python3 ../scripts/voice.py natural && python3 build_audio.py   # also wall/, switch/; voice presets in scripts/voice.py
+cd dayone && python3 ../scripts/voice.py human-f && python3 build_audio.py   # also wall/, switch/; voice presets in scripts/voice.py
 npx remotion render DayOne out/01-day-one.mp4      # TheWall, TheSwitch
 ```
 

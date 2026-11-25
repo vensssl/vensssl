@@ -67,6 +67,24 @@ def rain(d):
     drops = np.zeros(n); idx = rng.integers(0, n, int(d*35)); drops[idx] = rng.uniform(.3, 1, len(idx))
     return x + bp(drops, 2000, 6000)*4
 
+def breath(d=0.34, g=1.0):
+    """a soft, short inhale: shaped noise through two mouth-like resonances."""
+    n = int(d*SR); tt = np.arange(n)/SR; x = noise(n)
+    x = bp(x, 800, 1300)*0.9 + bp(x, 1600, 2600)*0.6 + bp(x, 3000, 5000)*0.15
+    e = np.sin(np.pi*np.clip(tt/(d*0.78), 0, 1)/2)**2 * np.clip((d-tt)/(d*0.22), 0, 1)
+    return x*e/np.abs(x*e).max() * 0.04 * g
+def add_breaths(vo, clips, min_gap=0.33):
+    """before every line that follows a pause, breathe in so the inhale ends just before the word."""
+    if os.environ.get("BREATH", "1") != "1": return
+    prev_end = 0.0
+    for k, (st, a) in enumerate(clips):
+        gap = st - prev_end
+        if k == 0 or gap >= min_gap:
+            d = min(0.36, max(0.22, gap*0.7)) if k else 0.3
+            b = breath(d, 0.8 + 0.4*rng.random()); i = int((st - 0.05 - d)*SR)
+            if i >= 0: vo[i:i+len(b)] += b[:len(vo)-i]
+        prev_end = st + len(a)/SR
+
 class Track:
     def __init__(self, lines='lines.tsv', offset=1.0, tail=3.4):
         rows = [l.rstrip('\n').split('\t') for l in open(lines) if l.strip()]
@@ -80,6 +98,7 @@ class Track:
         self.N = int(self.end*SR)
         self.vo, self.sfx, self.bed = np.zeros(self.N), np.zeros(self.N), np.zeros(self.N)
         for st, a in clips: i = int(st*SR); self.vo[i:i+len(a)] += a
+        add_breaths(self.vo, clips)
     def S(self, k): return self.seg[k]['start']
     def E(self, k): return self.seg[k]['end']
     def put(self, buf, at, x, g=1.0):

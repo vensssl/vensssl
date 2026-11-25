@@ -1,7 +1,7 @@
 """Narration voice: Kokoro (local) with voice blending + a "cinematic narrator" chain.
 Usage (from a video folder):  python3 ../scripts/voice.py PRESET            -> assets/vo/<id>.wav for lines.tsv
                               python3 ../scripts/voice.py PRESET --say "..." out.wav
-Presets live in PRESETS below; lines.tsv's voice/speed columns are ignored in favour of the preset."""
+Presets live in PRESETS below; lines.tsv's voice column is ignored; its speed column is used by presets with line_speed=True."""
 import os, subprocess, sys, tempfile
 import numpy as np, soundfile as sf
 from kokoro_onnx import Kokoro
@@ -19,6 +19,8 @@ PRESETS = {
     "natural":    dict(blend=[("am_michael", 1.0)], speed=0.95, pitch=0, warmth=2.0, echo=False, lang="en-us"),
     "natural-uk": dict(blend=[("bm_george", 1.0)], speed=0.95, pitch=0, warmth=2.0, echo=False, lang="en-gb"),
     "natural-f":  dict(blend=[("af_heart", 1.0)], speed=0.95, pitch=0, warmth=1.0, echo=False, lang="en-us"),
+    # human: the most natural voice, almost raw; each line keeps its own pace from lines.tsv
+    "human-f":    dict(blend=[("af_heart", 1.0)], speed=1.04, light=True, line_speed=True, lang="en-us"),
     "female":  dict(blend=[("af_heart", .7), ("af_bella", .3)], speed=.92, pitch=-0.6, warmth=2.0, lang="en-us"),
 }
 
@@ -27,6 +29,18 @@ def kokoro():
     global _k
     if _k is None: _k = Kokoro(f"{CACHE}/models/kokoro-v1.0.onnx", f"{CACHE}/voices/voices-v1.0.bin")
     return _k
+
+def light_chain():
+    """barely-there polish: clean rumble, a touch of body and air, gentle levelling, a hint of real room."""
+    return ",".join([
+        "highpass=f=80",
+        "equalizer=f=220:t=q:w=1.0:g=1.5",
+        "equalizer=f=5500:t=q:w=1.2:g=1.0",
+        "acompressor=threshold=-24dB:ratio=1.8:attack=15:release=250:makeup=2",
+        "aecho=0.9:0.9:23|41|67:0.05|0.035|0.02",
+        "volume=4dB",
+        "alimiter=limit=0.95:attack=5:release=80",
+    ])
 
 def chain(p):
     """ffmpeg filter: pitch down (formants kept), clean low end, warm body, cut mud, presence, de-ess,
@@ -48,14 +62,15 @@ def chain(p):
         "alimiter=limit=0.89",
     ])
 
-def say(text, preset, out):
+def say(text, preset, out, line_speed=0.95):
     p = PRESETS[preset]
     k = kokoro()
     style = sum(k.get_voice_style(v) * w for v, w in p["blend"])
-    audio, sr = k.create(text, voice=style, speed=p["speed"], lang=p["lang"])
+    speed = p["speed"] * (line_speed / 0.95 if p.get("line_speed") else 1)
+    audio, sr = k.create(text, voice=style, speed=speed, lang=p["lang"])
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as f: raw = f.name
     sf.write(raw, audio, sr)
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-af", chain(p), "-ar", "48000", out], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", raw, "-af", light_chain() if p.get("light") else chain(p), "-ar", "48000", out], check=True)
     os.unlink(raw)
 
 if __name__ == "__main__":
@@ -65,6 +80,6 @@ if __name__ == "__main__":
     os.makedirs("assets/vo", exist_ok=True)
     for line in open("lines.tsv"):
         if not line.strip(): continue
-        id_, _v, _s, _p, text = line.rstrip("\n").split("\t")
-        say(text, preset, f"assets/vo/{id_}.wav"); print(id_, end=" ", flush=True)
+        id_, _v, sp, _p, text = line.rstrip("\n").split("\t")
+        say(text, preset, f"assets/vo/{id_}.wav", float(sp)); print(id_, end=" ", flush=True)
     print()
