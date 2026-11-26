@@ -8,6 +8,7 @@ ev = dict(
     plant=S('10') + 0.2, climb=[E('11') + 0.05, E('11') + 2.0],
 )
 ev['top'] = ev['climb'][1]
+ev['hits'] = [S('08'), S('10'), ev['top']]
 for i in range(7): put(tr.sfx, ev['crowd'] + i*0.09, pop(700 + i*60), .12)
 # wall rises: low rumble + thud
 n = int(1.1*SR); put(tr.sfx, ev['wall'], lp(noise(n), 200)*np.sin(np.linspace(0, np.pi, n)), .5); put(tr.sfx, ev['wall'] + 1.0, thud(), .6)
@@ -40,4 +41,5 @@ while t < tr.end-0.4:
     c = prog[k % 4]; put(tr.bed, t, pad(c, bar+1.2, att=.2, bright=1600), .55)
     for b in range(8): put(tr.bed, t+b*bar/8, pluck(hz(c[(b*2) % 3])*2, .5, .2))
     t += bar; k += 1
-tr.write('../public/wall', ev, replace=[('nobody is', "nobody's")], ref=dict(prog='dm', swell=ev['top'], dip=(S('07'), S('08'))))
+tr.write('../public/wall', ev, replace=[('nobody is', "nobody's"), ('five A M', '5AM')], ref=dict(prog='dm', swell=ev['top'], dip=(S('07'), S('08'))),
+         epic=dict(prog='dm', bpm=104, levels=[(0, 0), (S('02'), 1), (S('07'), 0), (S('08'), 2), (S('10'), 3)], climax=S('10')))

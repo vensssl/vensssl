@@ -20,7 +20,7 @@ PRESETS = {
     "natural-uk": dict(blend=[("bm_george", 1.0)], speed=0.95, pitch=0, warmth=2.0, echo=False, lang="en-gb"),
     "natural-f":  dict(blend=[("af_heart", 1.0)], speed=0.95, pitch=0, warmth=1.0, echo=False, lang="en-us"),
     # human: the most natural voice, almost raw; each line keeps its own pace from lines.tsv
-    "human-f":    dict(blend=[("af_heart", 1.0)], speed=1.04, light=True, line_speed=True, lang="en-us"),
+    "human-f":    dict(blend=[("af_heart", 1.0)], speed=1.08, light=True, line_speed=True, lang="en-us"),
     "female":  dict(blend=[("af_heart", .7), ("af_bella", .3)], speed=.92, pitch=-0.6, warmth=2.0, lang="en-us"),
 }
 

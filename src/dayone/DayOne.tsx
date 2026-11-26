@@ -3,6 +3,7 @@ import { AbsoluteFill, Audio, continueRender, delayRender, staticFile, useCurren
 import words from "../../public/dayone/words.json";
 import { C, Defs, FONT, FPS, L, T, back, clamp, ease, ramp } from "./kit";
 import { SceneGraph, SceneStage, SceneStairs, SceneYou, graphDays } from "./scenes";
+import { Punch } from "../shorts/Shell";
 
 export const DAYONE_FRAMES = Math.ceil(T.duration * FPS);
 const AUDIO = staticFile("dayone/audio.wav");
@@ -70,20 +71,33 @@ const GROUPS: Group[] = (() => {
 const Captions: React.FC<{ t: number }> = ({ t }) => {
   const g = GROUPS.find((x) => t >= x.start && t < x.end);
   if (!g) return null;
-  const pop = back(ramp(t, g.start, g.start + 0.16));
+  const pop = back(ramp(t, g.start, g.start + 0.14));
+  const EMPH = /^(trap|explodes|37x|nothing|today|life)$/i;
   return (
     <div style={{ position: "absolute", left: 130, right: 130, top: 500, height: 170, display: "flex", alignItems: "center", justifyContent: "center" }}>
       <div
         style={{
           font: `800 70px ${FONT}`, lineHeight: 1.1, letterSpacing: 1, textAlign: "center", textTransform: "uppercase",
-          color: C.ink, opacity: clamp(pop * 2), transform: `scale(${0.9 + 0.1 * pop})`,
+          color: C.ink, opacity: clamp(pop * 2), transform: `scale(${0.7 + 0.3 * pop})`,
           textShadow: "0 4px 18px rgba(0,0,0,.85)",
         }}
       >
         {g.words.map((w, i) => {
           const active = t >= w.start - 0.03 && t < w.end + 0.05;
+          const big = EMPH.test(w.text.replace(/[^\w%]/g, ""));
+          const slam = big ? back(ramp(t, w.start - 0.03, w.start + 0.12)) : 1;
           return (
-            <span key={i} style={{ color: active ? C.gold : C.ink, textShadow: active ? `0 0 22px ${C.gold}66, 0 4px 18px rgba(0,0,0,.85)` : undefined }}>
+            <span
+              key={i}
+              style={{
+                color: active || (big && t >= w.start) ? C.gold : C.ink,
+                fontSize: big ? "1.3em" : undefined,
+                display: big ? "inline-block" : undefined,
+                margin: big ? "0 0.28em" : undefined,
+                transform: big ? `scale(${t < w.start - 0.03 ? 1 : 0.6 + 0.4 * slam})` : undefined,
+                textShadow: active || big ? `0 0 26px ${C.gold}88, 0 4px 18px rgba(0,0,0,.85)` : undefined,
+              }}
+            >
               {w.text.replace(/[.,]$/, "")}
               {i < g.words.length - 1 ? " " : ""}
             </span>
@@ -136,12 +150,14 @@ export const DayOne: React.FC = () => {
     <AbsoluteFill style={{ background: C.bg }}>
       <Audio src={AUDIO} />
       <AbsoluteFill style={{ background: "radial-gradient(ellipse 70% 45% at 50% 58%, #14161f 0%, #07080c 70%)" }} />
-      <AbsoluteFill style={{ opacity: cutIn * out }}>
-        <svg width={1080} height={1920} viewBox="0 0 1080 1920">
-          <Defs />
-          {SCENES[idx].render(t)}
-        </svg>
-      </AbsoluteFill>
+      <Punch t={t} hits={(T.events as unknown as { hits: number[] }).hits ?? []}>
+        <AbsoluteFill style={{ opacity: cutIn * out }}>
+          <svg width={1080} height={1920} viewBox="0 0 1080 1920">
+            <Defs />
+            {SCENES[idx].render(t)}
+          </svg>
+        </AbsoluteFill>
+      </Punch>
       <Counter t={t} />
       <Captions t={t} />
       <EndLine t={t} />

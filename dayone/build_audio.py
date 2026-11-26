@@ -49,6 +49,7 @@ ev = dict(
     roll100=[S('07') - 0.05, S('07') + 1.0],       # DAY 30 -> 100
     impact=E('10') + 0.05,                         # the curve explodes
     stairs=S('11') + 0.2,
+    hits=[S('08'), E('10') + 0.05, S('14')],       # picture punches
 )
 
 # ---------- SFX ----------
@@ -144,9 +145,13 @@ if os.environ.get("STYLE") == "ref":   # held-chord reference bed (see scripts/a
 if os.environ.get("STYLE") == "soft":
     import sys; sys.path.insert(0, '../scripts'); from audiokit import soft_bed
     bed = soft_bed(N, 'am', swell=ev['impact'], dip=(trap, S('09'))) * np.clip((end - tt)/1.8, 0, 1)
+if os.environ.get("STYLE") == "epic":
+    import sys; sys.path.insert(0, '../scripts'); from audiokit import epic_bed
+    lv = [(0, 0), (S('03'), 1), (S('06'), 2), (trap, 0), (S('09'), 1), (ev['impact'], 3)]
+    bed = epic_bed(N, 'am', bpm=100, levels=lv, climax=ev['impact']) * np.clip((end - tt)/1.8, 0, 1)
 # side-chain the bed under the voice
 vel = lp(np.abs(vo), 6); vel /= vel.max()+1e-9
-bed *= 1 - 0.35*np.clip(vel*3, 0, 1)
+bed *= 1 - (0.4 if os.environ.get("STYLE") == "epic" else 0.35)*np.clip(vel*3, 0, 1)
 
 mix = vo*1.05 + sfx + bed*0.9
 mix = np.tanh(mix*1.05)*0.89
@@ -157,7 +162,7 @@ sf.write('../public/dayone/audio.wav', mix.astype(np.float32), SR)
 words = []
 for s in segs:
     text = (s['text'].replace('One point zero one', '1.01').replace('Zero point nine nine', '0.99')
-            .replace('three sixty five', '365').replace('thirty seven', '37').replace('Day thirty', 'Day 30')
+            .replace('three sixty five', '365').replace('thirty seven', '37').replace('Thirty seven', '37x').replace('Day thirty', 'Day 30')
             .replace('Day one hundred', 'Day 100').replace('One percent', '1%'))
     toks = text.split()
     w = np.array([len(re.sub(r'\W', '', x))+2 for x in toks], float); w /= w.sum()

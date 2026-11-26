@@ -36,4 +36,6 @@ while t < tr.end-0.4:
     if t < tr.vo_end - 0.5:
         for b in range(4): put(tr.bed, t+b*beat, kick(), .3)
     t += bar; k += 1
-tr.write('../public/switch', ev, ref=dict(prog='am', swell=ev['flip'], dip=(S('05') + 1.0, ev['flip'])))
+ev['hits'] = [ev['flip'], S('09'), ev['arrive']]
+tr.write('../public/switch', ev, ref=dict(prog='am', swell=ev['flip'], dip=(S('05') + 1.0, ev['flip'])),
+         epic=dict(prog='em', bpm=108, levels=[(0, 1), (S('04'), 0), (ev['flip'], 3)], climax=ev['flip']))

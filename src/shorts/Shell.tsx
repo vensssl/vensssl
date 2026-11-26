@@ -38,22 +38,49 @@ export const makeGroups = (ws: Word[]): Group[] => {
   return out.map((g, i) => ({ ...g, end: Math.min(out[i + 1]?.start ?? Infinity, g.end + 0.4) }));
 };
 
-export const Captions: React.FC<{ t: number; groups: Group[]; accent: string; top?: number }> = ({ t, groups, accent, top = 500 }) => {
+/** 0..1 punch envelope: jumps to 1 on each hit time and decays fast */
+export const punchAt = (t: number, hits: number[]) => hits.reduce((m, h) => (t >= h && t < h + 0.8 ? Math.max(m, Math.exp(-(t - h) * 7)) : m), 0);
+
+/** zoom punch + shake + flash on the hit moments */
+export const Punch: React.FC<{ t: number; hits: number[]; children: React.ReactNode }> = ({ t, hits, children }) => {
+  const p = punchAt(t, hits);
+  const sx = p > 0.05 ? Math.sin(t * 97) * 14 * p : 0, sy = p > 0.05 ? Math.cos(t * 83) * 10 * p : 0;
+  return (
+    <AbsoluteFill>
+      <AbsoluteFill style={{ transform: `translate(${sx}px,${sy}px) scale(${1 + 0.07 * p})` }}>{children}</AbsoluteFill>
+      <AbsoluteFill style={{ background: "#fff", opacity: Math.max(0, p - 0.6) * 0.6, pointerEvents: "none" }} />
+    </AbsoluteFill>
+  );
+};
+
+export const Captions: React.FC<{ t: number; groups: Group[]; accent: string; top?: number; emph?: RegExp }> = ({ t, groups, accent, top = 500, emph }) => {
   const g = groups.find((x) => t >= x.start && t < x.end);
   if (!g) return null;
-  const pop = back(ramp(t, g.start, g.start + 0.16));
+  const pop = back(ramp(t, g.start, g.start + 0.14));
   return (
     <div style={{ position: "absolute", left: 130, right: 130, top, height: 170, display: "flex", alignItems: "center", justifyContent: "center" }}>
       <div
         style={{
           font: `800 70px ${FONT}`, lineHeight: 1.1, letterSpacing: 1, textAlign: "center", textTransform: "uppercase",
-          color: C.ink, opacity: clamp(pop * 2), transform: `scale(${0.9 + 0.1 * pop})`, textShadow: "0 4px 18px rgba(0,0,0,.85)",
+          color: C.ink, opacity: clamp(pop * 2), transform: `scale(${0.7 + 0.3 * pop})`, textShadow: "0 4px 18px rgba(0,0,0,.85)",
         }}
       >
         {g.words.map((w, i) => {
           const active = t >= w.start - 0.03 && t < w.end + 0.05;
+          const big = emph ? emph.test(w.text.replace(/[^\w%]/g, "")) : false;
+          const slam = big ? back(ramp(t, w.start - 0.03, w.start + 0.12)) : 1;
           return (
-            <span key={i} style={{ color: active ? accent : C.ink, textShadow: active ? `0 0 22px ${accent}66, 0 4px 18px rgba(0,0,0,.85)` : undefined }}>
+            <span
+              key={i}
+              style={{
+                color: active || (big && t >= w.start) ? accent : C.ink,
+                fontSize: big ? "1.3em" : undefined,
+                display: big ? "inline-block" : undefined,
+                margin: big ? "0 0.28em" : undefined,
+                transform: big ? `scale(${t < w.start - 0.03 ? 1 : 0.6 + 0.4 * slam})` : undefined,
+                textShadow: active || big ? `0 0 26px ${accent}88, 0 4px 18px rgba(0,0,0,.85)` : undefined,
+              }}
+            >
               {w.text.replace(/[.,]$/, "")}
               {i < g.words.length - 1 ? " " : ""}
             </span>

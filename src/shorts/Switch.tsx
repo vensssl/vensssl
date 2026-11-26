@@ -3,7 +3,7 @@ import { AbsoluteFill, Audio, random, staticFile, useCurrentFrame, useVideoConfi
 import timing from "../../public/switch/timing.json";
 import words from "../../public/switch/words.json";
 import { C, Chip, Defs, Figure, FONT, FPS, Label, Spotlight, back, clamp, draw, ease, easeIO, flickerOn, lerp, neon, ramp } from "../dayone/kit";
-import { Captions, EndLine, Finish, Ground, Hud, Timing, makeGroups, timingFns, useFonts } from "./Shell";
+import { Captions, EndLine, Finish, Ground, Hud, Punch, Timing, makeGroups, timingFns, useFonts } from "./Shell";
 
 const T = timing as unknown as Timing;
 const { L, LE, ev, evs } = timingFns(T);
@@ -198,17 +198,19 @@ export const TheSwitch: React.FC = () => {
     <AbsoluteFill style={{ background: C.bg }}>
       <Audio src={staticFile("switch/audio.wav")} />
       <Ground tint={flipped ? "#0f1b1d" : "#15161d"} />
-      <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
+      <Punch t={t} hits={evs("hits")}>
+        <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
         <Defs />
         <Stage t={t} />
       </svg>
+      </Punch>
       <Hud
         label={flipped ? "DISCIPLINE" : "MOTIVATION"}
         value={flipped ? "ON" : `${Math.round(v * 100)}%`}
         color={flipped ? CYAN : levelColor(v)}
         opacity={ease(ramp(t, 0.25, 0.7))}
       />
-      <Captions t={t} groups={GROUPS} accent={CYAN} />
+      <Captions t={t} groups={GROUPS} accent={CYAN} emph={/^(battery|charged|empty|Dead|quit|switch|flip|Day|there)$/i} />
       <EndLine t={t} at={T.endCardStart + 0.3} text="FLIP THE SWITCH" sub="SAVE THIS FOR TOMORROW MORNING" color={CYAN} />
       <Finish frame={frame} />
     </AbsoluteFill>

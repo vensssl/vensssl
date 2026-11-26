@@ -105,12 +105,14 @@ class Track:
         i = int(at*SR)
         if i >= self.N or i < 0: return
         x = x[:self.N-i]; buf[i:i+len(x)] += x*g
-    def write(self, out_dir, events, replace=(), ref=None):
+    def write(self, out_dir, events, replace=(), ref=None, epic=None):
         """ref: dict(prog=, swell=, dip=) -> replace the music with the held-chord reference bed (STYLE=ref)."""
         tt = np.arange(self.N)/SR
         duck = 0.35
         if ref is not None and os.environ.get("STYLE") == "ref":
             self.bed = ref_bed(self.N, **ref); duck = 0.2
+        if epic is not None and os.environ.get("STYLE") == "epic":
+            self.bed = epic_bed(self.N, **epic); duck = 0.4
         if ref is not None and os.environ.get("STYLE") == "soft":
             self.bed = soft_bed(self.N, **ref); duck = 0.3
         self.bed *= np.clip((self.end - tt)/1.8, 0, 1)
@@ -206,3 +208,89 @@ def soft_bed(N, prog="am", bpm=72, swell=None, dip=None):
         a, b = dip; d = np.clip(np.minimum((tt-a)/.3, (b-tt)/.6), 0, 1); bed *= 1 - 0.7*d
     bed /= np.abs(bed).max() + 1e-9
     return bed * 0.2
+
+# ---- epic bed: driving motivational score that builds in levels ----
+#   level 0: warm strings only        1: + pulsing 8th bass + heartbeat kick
+#   level 2: + four-on-the-floor, hats, tom fills, pumping
+#   level 3: + snare/claps on 2 & 4, piano hook, brighter strings
+EPIC_PROG = {
+    "am": [['A2','E3','A3','C4','E4'], ['F2','C3','F3','A3','C4'], ['C3','G3','C4','E4','G4'], ['G2','D3','G3','B3','D4']],
+    "dm": [['D3','A3','D4','F4','A4'], ['A#2','F3','A#3','D4','F4'], ['F2','C3','F3','A3','C4'], ['C3','G3','C4','E4','G4']],
+    "em": [['E2','B2','E3','G3','B3'], ['C3','G3','C4','E4','G4'], ['G2','D3','G3','B3','D4'], ['D3','A3','D4','F#4','A4']],
+}
+def supersaw(f, n, voices=5, spread=0.25):
+    tt = np.arange(n)/SR; x = np.zeros(n)
+    for v in range(voices):
+        d = (v - (voices-1)/2) / ((voices-1)/2) * spread
+        ph = (f*(1+d/100)*tt + rng.random()) % 1.0; x += 2*ph - 1
+    return x / voices
+def snare():
+    n = int(.3*SR); tt = np.arange(n)/SR
+    body = np.sin(2*np.pi*190*tt)*env(n, .001, .05)
+    return body*.7 + bp(noise(n), 1500, 9000)*env(n, .001, .09)*1.1
+def clap():
+    n = int(.35*SR); x = np.zeros(n); nz = bp(noise(n), 900, 5000)
+    for o in (0, .011, .022): i = int(o*SR); x[i:] += (nz*env(n, .0005, .012))[:n-i]
+    return x + nz*env(n, .001, .12)*.5
+def tom(f=110):
+    n = int(.5*SR); tt = np.arange(n)/SR
+    return np.sin(2*np.pi*np.cumsum(f*(0.65 + 0.35*np.exp(-tt*12)))/SR)*env(n, .002, .22)
+def crash(d=2.5):
+    n = int(d*SR); return hp(noise(n), 4000)*env(n, .002, .9)
+def bigkick():
+    n = int(.5*SR); tt = np.arange(n)/SR
+    return np.sin(2*np.pi*np.cumsum(48 + 130*np.exp(-tt*28))/SR)*env(n, .001, .2) + lp(noise(n), 3000)*env(n, .0005, .004)*.5
+def epic_bed(N, prog="am", bpm=100, levels=((0, 1),), hits=(), climax=None):
+    """levels: [(time, level)] sorted. hits: impact times (boom + crash). climax: snare roll + riser lead-in."""
+    chords = EPIC_PROG[prog]; beat = 60/bpm; bar = 4*beat
+    music, drums = np.zeros(N), np.zeros(N); tt = np.arange(N)/SR
+    lv = lambda t: max([l for (a, l) in levels if a <= t + 1e-6] or [0])
+    def put(buf, at, x, g=1.0):
+        i = int(at*SR)
+        if 0 <= i < N: m = min(len(x), N-i); buf[i:i+m] += x[:m]*g
+    hook = [4, 2, 3, 2, 4, 3, 2, 1]
+    t = 0.0; k = 0
+    while t < N/SR:
+        c = chords[k % len(chords)]; L = lv(t)
+        # strings: supersaw chord, brighter with level
+        n = int((bar + 0.6)*SR); lt = np.arange(n)/SR
+        s = sum(supersaw(hz(nt)*(2 if i > 1 else 1), n) for i, nt in enumerate(c[1:])) / 4
+        s = lp(s, [1400, 1800, 2400, 3400][L]) * np.minimum(1, lt/(0.5 if L else 1.2)) * np.clip((bar+0.6-lt)/0.6, 0, 1)
+        put(music, t, s, [0.5, 0.45, 0.5, 0.6][L])
+        for b in range(8):
+            bt = t + b*beat/2; Lb = lv(bt)
+            if Lb >= 1:   # pulsing bass 8ths
+                nn = int(beat/2*SR*0.95); lt2 = np.arange(nn)/SR
+                bass = lp(supersaw(hz(c[0]), nn, 3, 0.1) + 0.6*np.sin(2*np.pi*hz(c[0])/2*lt2), 300 + 250*Lb) * env(nn, .003, .16)
+                put(music, bt, bass, 0.55)
+            if Lb >= 3:   # piano hook, octave up
+                f_ = hz(c[hook[b] % len(c)])*4
+                put(music, bt, felt(f_, 1.2, 0.5)); put(music, bt, pluck(f_, .5, .5), 0.3)
+            if Lb >= 2: put(drums, bt + beat/4, hat(), .12)
+        for b in range(4):
+            bt = t + b*beat; Lb = lv(bt)
+            if Lb >= 2 or (Lb == 1 and b % 2 == 0): put(drums, bt, bigkick(), 0.75 if Lb >= 2 else 0.5)
+            if Lb >= 3 and b % 2 == 1: put(drums, bt, snare(), .45); put(drums, bt, clap(), .35)
+        if lv(t) >= 2 and k % 4 == 3:   # tom fill at the end of every 4th bar
+            for j, f in enumerate((140, 120, 100, 85)): put(drums, t + 3*beat + j*beat/4, tom(f), .5)
+        t += bar; k += 1
+    # pumping: ducks the music on every kick from level 2
+    pump = np.ones(N)
+    for i0 in np.arange(0, N/SR, beat):
+        if lv(i0) >= 2:
+            a = int(i0*SR); n = min(int(beat*SR), N-a); lt = np.arange(n)/SR
+            pump[a:a+n] = 1 - 0.45*np.exp(-lt*9)
+    music *= pump
+    fx = np.zeros(N)
+    if climax is not None:   # riser + snare roll into the climax
+        r0 = climax - 2*bar/2
+        put(fx, r0, riser(climax - r0), .12)
+        nroll = 16; 
+        for j in range(nroll):
+            p = j/nroll; at = r0 + (climax - r0)*(1 - (1-p)**1.6)
+            put(fx, at, snare(), .1 + .3*p)
+    for h in hits:
+        put(fx, h, boom(), .6); put(fx, h, crash(), .25)
+    bed = music + drums*1.1 + fx
+    bed /= np.abs(bed).max() + 1e-9
+    return bed * 0.5

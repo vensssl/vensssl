@@ -3,7 +3,7 @@ import { AbsoluteFill, Audio, random, staticFile, useCurrentFrame, useVideoConfi
 import timing from "../../public/wall/timing.json";
 import words from "../../public/wall/words.json";
 import { C, Chip, Defs, Figure, FONT, FPS, Label, Spotlight, back, clamp, draw, ease, easeIO, flickerOff, flickerOn, lerp, neon, ramp } from "../dayone/kit";
-import { Captions, EndLine, Finish, Ground, Hud, Timing, makeGroups, timingFns, useFonts } from "./Shell";
+import { Captions, EndLine, Finish, Ground, Hud, Punch, Timing, makeGroups, timingFns, useFonts } from "./Shell";
 
 const T = timing as unknown as Timing;
 const { L, LE, ev, evs } = timingFns(T);
@@ -188,12 +188,14 @@ export const TheWall: React.FC = () => {
     <AbsoluteFill style={{ background: C.bg }}>
       <Audio src={staticFile("wall/audio.wav")} />
       <Ground tint="#1a1119" />
-      <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
+      <Punch t={t} hits={evs("hits")}>
+        <svg width={1080} height={1920} viewBox="0 0 1080 1920" style={{ position: "absolute", inset: 0 }}>
         <Defs />
         <Stage t={t} />
       </svg>
+      </Punch>
       <Hud label="STILL HERE" value={String(here)} color={here === 1 ? PINK : C.ink} opacity={ease(ramp(t, 0.25, 0.7)) * (1 - ramp(t, evs("climb")[1] + 0.2, evs("climb")[1] + 0.5))} bump={here !== hereBefore} />
-      <Captions t={t} groups={GROUPS} accent={PINK} />
+      <Captions t={t} groups={GROUPS} accent={PINK} emph={/^(trophy|5AM|again|quit|wall|NOT|stop|bad|stay|climb)$/i} />
       <EndLine t={t} at={evs("climb")[1] + 0.5} text="STAY WHEN THEY LEAVE" sub="SAVE THIS FOR THE HARD DAYS" color={PINK} top={300} />
       <Finish frame={frame} />
     </AbsoluteFill>
