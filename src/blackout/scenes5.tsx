@@ -154,7 +154,7 @@ const SKYLINE: Bld[] = (() => {
 /** order of shutdown 0..1: north (left) first, far before near, the camera's roof last */
 const offAt = (b: Bld) => clamp((b.depth * 0.32 + (b.x / W) * 0.3 + random(`bo${b.id}`) * 0.06) / 0.98);
 
-const Skyline: React.FC<{ wave: number; t: number }> = ({ wave, t }) => (
+export const Skyline: React.FC<{ wave: number; t: number }> = ({ wave, t }) => (
   <Svg>
     <defs>
       <linearGradient id="sky5" x1="0" y1="0" x2="0" y2="1">
@@ -242,7 +242,7 @@ const Selfie: React.FC<{ t: number; reveal: number }> = ({ t, reveal }) => (
 );
 
 /* Phone-camera chrome over the video: REC, timecode, battery, scanline */
-const PhoneUI: React.FC<{ t: number; start: number; frozen?: boolean }> = ({ t, start, frozen }) => {
+export const PhoneUI: React.FC<{ t: number; start: number; frozen?: boolean }> = ({ t, start, frozen }) => {
   const secs = 14 * 60 + Math.floor(t - start);
   const tc = `21:${String(Math.floor(secs / 60) % 60).padStart(2, "0")}:${String(secs % 60).padStart(2, "0")}`;
   return (
