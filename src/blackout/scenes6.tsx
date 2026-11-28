@@ -10,13 +10,13 @@ const COAT = "#5d6270";
 const COAT_DARK = "#474b57";
 const HEAD = "#0a0a0d";
 
-const Svg: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
+export const Svg: React.FC<{ children: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
   <svg width={W} height={H} viewBox={`0 0 ${W} ${H}`} style={{ position: "absolute", inset: 0, ...style }}>
     {children}
   </svg>
 );
 
-const PAPER = {
+export const PAPER = {
   background: "#cfc8b8",
   backgroundImage:
     "linear-gradient(90deg, transparent 110px, rgba(229,36,59,.55) 110px 114px, transparent 114px), repeating-linear-gradient(transparent 0 118px, rgba(60,80,140,.28) 118px 121px)",
@@ -26,7 +26,7 @@ const PAPER = {
 const NAMES = ["4A  Hendricks", "5C  Okafor", "6A  The Brennans", "6C  Lin", "7D  Moretti", "7B  Alvarez, D."];
 
 /** Mark's list, in pencil. write/strike 0..1 sweep row by row; circle rings the last name. */
-const List: React.FC<{ write: number; strike: number; circle?: number; dim?: number; style?: React.CSSProperties }> = ({ write, strike, circle = 0, dim = 0, style }) => (
+export const List: React.FC<{ write: number; strike: number; circle?: number; dim?: number; style?: React.CSSProperties }> = ({ write, strike, circle = 0, dim = 0, style }) => (
   <div style={{ position: "absolute", left: 90, top: 420, width: 900, height: 860, transform: "rotate(3deg)", boxShadow: "0 40px 100px rgba(0,0,0,.85)", ...PAPER, ...style }}>
     <div style={{ position: "absolute", left: 140, top: 40, fontFamily: F.pencil, fontSize: 82, color: "#1f2230", lineHeight: "121px" }}>
       {NAMES.map((r, i) => {
@@ -49,7 +49,7 @@ const List: React.FC<{ write: number; strike: number; circle?: number; dim?: num
 );
 
 /** A figure in a gray coat. eyes: 0 = dark, 1 = lit from inside. */
-const Coat: React.FC<{ x: number; y: number; s: number; eyes?: number; rim?: number; veins?: number; o?: number }> = ({ x, y, s, eyes = 0, rim = 0, veins = 0, o = 1 }) => (
+export const Coat: React.FC<{ x: number; y: number; s: number; eyes?: number; rim?: number; veins?: number; o?: number }> = ({ x, y, s, eyes = 0, rim = 0, veins = 0, o = 1 }) => (
   <g transform={`translate(${x} ${y}) scale(${s})`} opacity={o}>
     <path d="M -80 -360 L 80 -360 L 120 0 L -120 0 Z" fill={COAT} />
     <path d="M -80 -360 L 0 -250 L 80 -360 L 64 -380 L 0 -300 L -64 -380 Z" fill={COAT_DARK} />
@@ -151,7 +151,7 @@ export const SceneRecap: React.FC<P> = ({ t }) => {
 };
 
 /* the street: a line of white trucks, headlights in our eyes, and him */
-const Street: React.FC<{ t: number; man: number; glare: number; rim?: number; eyes?: number; veins?: number; manScale?: number }> = ({ t, man, glare, rim = 0.7, eyes = 0, veins = 0, manScale = 1.5 }) => (
+export const Street: React.FC<{ t: number; man: number; glare: number; rim?: number; eyes?: number; veins?: number; manScale?: number }> = ({ t, man, glare, rim = 0.7, eyes = 0, veins = 0, manScale = 1.5 }) => (
   <Svg>
     <defs>
       <radialGradient id="hl6">
@@ -269,7 +269,7 @@ const HOUSES: Node[] = Array.from({ length: 18 }, (_, i) => ({
 const reachAt = (n: Node) => clamp(((n.x - 130) / 900) * 0.55 + ((n.y - 720) / 460) * 0.35 + random(`ra${n.id}`) * 0.1);
 
 /** the city on a control-room screen: houses as lit squares on a wire grid; spread 0..1 turns them red */
-const GridMap: React.FC<{ t: number; spread: number; off?: number }> = ({ t, spread, off = 0 }) => (
+export const GridMap: React.FC<{ t: number; spread: number; off?: number }> = ({ t, spread, off = 0 }) => (
   <Svg>
     <rect width={W} height={H} fill="#030812" />
     {/* wires */}

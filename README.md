@@ -62,3 +62,17 @@ npx remotion still Cover6 out/blackout-part6-cover.png
 ```
 
 Narration lines and voices: `part6/lines.tsv`. Scenes: `src/blackout/scenes6.tsx`. Post texts: `part6/post/`.
+
+## BLACKOUT Part 7 (finale)
+
+```bash
+cd part7 && python3 build_audio.py   # narration lines -> soundtrack + word timings
+```
+```bash
+npm run render -- BlackoutPart7 out/blackout-part7.mp4
+```
+```bash
+npx remotion still Cover7 out/blackout-part7-cover.png
+```
+
+Narration lines and voices: `part7/lines.tsv`. Scenes: `src/blackout/scenes7.tsx`. Post texts: `part7/post/`.
